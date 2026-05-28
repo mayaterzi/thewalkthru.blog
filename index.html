@@ -75,6 +75,91 @@ nav {
 
 .nav-links a:hover { opacity: 1; }
 
+/* ───────── MOBILE MENU ───────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 14, 10, 0.98);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-top: 110px;
+}
+
+.mobile-menu.active {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-menu-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 3rem 2.5rem;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-content a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu-content a:hover {
+  opacity: 0.65;
+}
+
 /* ───────── HERO ───────── */
 /* Extra tall — 130vh so the image pulls further down the page */
 .hero {
@@ -383,9 +468,19 @@ footer {
 @media (max-width: 768px) {
   .nav-logo img { height: 70px; }
 
-  nav { height: 90px; }
+  nav { height: 90px; padding: 0 1.25rem; }
 
   .hero { padding-top: 90px; }
+
+  /* Show hamburger menu on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop nav links on mobile */
+  .nav-links {
+    display: none;
+  }
 
   .footer-top {
     grid-template-columns: 1fr;
@@ -398,7 +493,6 @@ footer {
     text-align: center;
   }
 
-  nav { padding: 0 1.25rem; }
   .hero-inner { padding: 3rem 1.25rem 0; }
 }
 </style>
@@ -413,13 +507,26 @@ footer {
       <img src="./logo.png" alt="The Walk Thru" />
     </a>
     <ul class="nav-links">
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="archive.html">Archive</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
+      <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
+      <li><a href="https://www.thewalkthru.blog/about">About</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 </header>
 
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <a href="https://www.thewalkthru.blog/blog">Blog</a>
+    <a href="https://www.thewalkthru.blog/archive">Archive</a>
+    <a href="https://www.thewalkthru.blog/about">About</a>
+  </div>
+</div>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
@@ -536,9 +643,9 @@ footer {
     <!-- Nav col — contact removed -->
     <div>
       <ul class="footer-nav-list">
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="archive.html">Archive</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
+        <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
+        <li><a href="https://www.thewalkthru.blog/about">About</a></li>
       </ul>
     </div>
 
@@ -567,6 +674,26 @@ footer {
   </div>
 
 </footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
