@@ -536,8 +536,8 @@ footer {
 <section class="page-header">
   <div class="page-header-inner">
     <p class="page-label">The Walk Thru — About</p>
-    <h1 class="page-title">About</h1>
-    <p class="page-subtitle">Meet the founders behind The Walk Thru.</p>
+    <h1 class="page-title">OUR PEOPLE</h1>
+    <p class="page-subtitle">Where fashion strides forward;</p>
   </div>
 </section>
 
@@ -548,7 +548,7 @@ footer {
       <div class="founder-image">
         <img src="https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/maya.png" alt="Maya" />
       </div>
-      <h2 class="founder-name">Maya Terzi</h2>
+      <h2 class="founder-name">Maya</h2>
       <p class="founder-title">Co-Founder & Editor</p>
     </div>
     
@@ -556,13 +556,16 @@ footer {
       <div class="founder-image">
         <img src="https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/cj.png" alt="CJ" />
       </div>
-      <h2 class="founder-name">Charles Johnson</h2>
-      <p class="founder-title">Co-Founder & Outreach</p>
+      <h2 class="founder-name">CJ</h2>
+      <p class="founder-title">Co-Founder & Creative Director</p>
     </div>
   </div>
 
   <p class="about-text">
-    We’re curators, cultural critics, and storytellers. We are fans of the fit and students of the archives. We are inspired by identity, legacy, sports, streetwear’s collision with high fashion, and the everyday people who make sidewalks feel like runways. From peers to business partners, we join forces to spotlight the stories and movements that deserve the front row.
+    The Walk Thru is a biweekly cultural blog at the intersection of fashion and sport. 
+    Founded by Maya and CJ, the publication explores how what we wear speaks to who we are, 
+    where we've been, and where we're headed. Through curated storytelling and visual culture, 
+    we unpack the narratives woven into every thread.
   </p>
 </section>
 
