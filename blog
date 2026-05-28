@@ -807,6 +807,10 @@ footer {
     </article>
 
   </div>
+
+  <div style="text-align: center; margin-top: 4rem; padding-bottom: 2rem;">
+    <a href="#" class="read-link" style="font-size: 12px;">Load More Issues →</a>
+  </div>
 </section>
 
 
