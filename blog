@@ -575,7 +575,7 @@ footer {
     <div class="featured-img-wrap">
       <!-- GitHub image: issue26_1 -->
       <img
-        src="https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/issue26_1"
+        src="https://raw.githubusercontent.com/mayaterzi/thewalkthru/main/issue26_1"
         alt="Courtside: The Cultural Seat"
       />
     </div>
