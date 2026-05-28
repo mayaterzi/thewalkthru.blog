@@ -573,9 +573,9 @@ footer {
   <p class="featured-label">Latest Issue</p>
   <a href="https://www.thewalkthru.blog/blog/courtside" class="featured-post">
     <div class="featured-img-wrap">
-      <!-- INSERT YOUR IMAGE HERE: Replace the src URL below with your image URL -->
+      <!-- GitHub image: issue26_1 -->
       <img
-        src="https://images.squarespace-cdn.com/content/v1/682f8438c62df33a3cb9ab68/1779076028682-U0GPCDRF14Y6MULONE5L/Spike+Lee+x+Mets.jpeg"
+        src="https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/issue26_1"
         alt="Courtside: The Cultural Seat"
       />
     </div>
