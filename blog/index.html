@@ -391,13 +391,13 @@ nav {
   background: transparent;
   border-top: 1px solid rgba(255,255,255,0.12);
   border-bottom: 1px solid rgba(255,255,255,0.12);
-  margin-top: 5rem;
 }
 
 .marquee-track {
   display: flex;
   align-items: center;
   width: max-content;
+  /* REVERSED direction — to: translateX(0), from: translateX(-50%) */
   animation: scroll-reverse 48s linear infinite;
 }
 
@@ -420,6 +420,7 @@ nav {
   flex-shrink: 0;
 }
 
+/* Reversed scroll — moves right to left becomes left to right */
 @keyframes scroll-reverse {
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
