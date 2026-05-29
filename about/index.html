@@ -582,38 +582,35 @@ footer {
 
 /* ───────── RESPONSIVE ───────── */
 @media (max-width: 900px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .featured-post {
+  .founders-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
   }
 }
-
+ 
 @media (max-width: 768px) {
   .nav-logo img { height: 70px; }
   nav { height: 90px; padding: 0 1.25rem; }
   .page-header { padding-top: 90px; }
   .page-header-inner { padding: 3rem 1.25rem 3rem; }
-  .featured-section { padding: 3rem 1.25rem 0; }
-  .blog-section { padding: 3rem 1.25rem; }
-  .blog-grid { grid-template-columns: 1fr; }
-
+  .about-section { padding: 3rem 1.25rem; }
+  .founders-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+ 
+  /* Show hamburger menu on mobile */
   .hamburger {
     display: flex;
   }
-
+ 
+  /* Hide desktop nav links on mobile */
   .nav-links {
     display: none;
   }
-
+ 
   .footer-top {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-
+ 
   .footer-bottom-inner {
     flex-direction: column;
     gap: 0.5rem;
@@ -622,7 +619,7 @@ footer {
 }
 </style>
 </head>
-
+ 
 <body>
 
 <!-- ══ HEADER ══ -->
