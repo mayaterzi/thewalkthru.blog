@@ -303,6 +303,62 @@ nav {
   margin-bottom: 0;
 }
 
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ───────── ISSUE NAVIGATION ───────── */
+.issue-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 3rem;
+}
+
+.issue-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.issue-nav-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+}
+
+.issue-nav-arrow {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.issue-nav-link {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  transition: color 0.2s ease;
+}
+
+.issue-nav-link:hover {
+  color: var(--white);
+}
+
+.issue-nav-item:hover .issue-nav-arrow {
+  opacity: 0.6;
+}
+
 /* ───────── MARQUEE ───────── */
 .marquee-section {
   padding: 4rem 0;
@@ -556,9 +612,9 @@ footer {
 <!-- ══ MOBILE MENU ══ -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-content">
-    <a href="https://mayaterzi.github.io/thewalkthru.blog/blog/">Blog</a>
-    <a href="https://mayaterzi.github.io/thewalkthru.blog/archive/">Archive</a>
-    <a href="https://mayaterzi.github.io/thewalkthru.blog/about/">About</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../archive.html">Archive</a>
+    <a href="../about.html">About</a>
   </div>
 </div>
 
@@ -646,6 +702,23 @@ Basketball turned fashion into performance long before luxury understood content
 
 </section>
 
+<!-- ══ ISSUE NAVIGATION ══ -->
+<section class="post-section">
+  <div class="issue-nav">
+    <div class="issue-nav-item">
+      <span class="issue-nav-label">Previous Issue</span>
+      <a href="under-the-brim.html" class="issue-nav-link">
+        <span class="issue-nav-arrow">←</span><br>
+        Issue 25
+      </a>
+    </div>
+    <div class="issue-nav-item">
+      <span class="issue-nav-label">Back to</span>
+      <a href="../blog.html" class="issue-nav-link">All Issues</a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ MARQUEE ══ -->
 <section class="marquee-section" aria-hidden="true">
   <div class="marquee-track">
@@ -712,9 +785,9 @@ Basketball turned fashion into performance long before luxury understood content
 
     <div>
       <ul class="footer-nav-list">
-        <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
-        <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
-        <li><a href="https://www.thewalkthru.blog/about">About</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../archive.html">Archive</a></li>
+        <li><a href="../about.html">About</a></li>
       </ul>
     </div>
 
