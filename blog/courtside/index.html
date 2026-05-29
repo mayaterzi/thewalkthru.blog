@@ -575,9 +575,13 @@ footer {
   }
 
   .footer-top {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 3rem;
+  padding-bottom: 2rem;  /* ADD THIS LINE */
+}
 
   .footer-bottom-inner {
     flex-direction: column;
