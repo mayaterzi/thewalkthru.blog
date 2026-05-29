@@ -582,35 +582,38 @@ footer {
 
 /* ───────── RESPONSIVE ───────── */
 @media (max-width: 900px) {
-  .founders-grid {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-post {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 }
- 
+
 @media (max-width: 768px) {
   .nav-logo img { height: 70px; }
   nav { height: 90px; padding: 0 1.25rem; }
   .page-header { padding-top: 90px; }
   .page-header-inner { padding: 3rem 1.25rem 3rem; }
-  .about-section { padding: 3rem 1.25rem; }
-  .founders-grid { grid-template-columns: 1fr; gap: 2.5rem; }
- 
-  /* Show hamburger menu on mobile */
+  .featured-section { padding: 3rem 1.25rem 0; }
+  .blog-section { padding: 3rem 1.25rem; }
+  .blog-grid { grid-template-columns: 1fr; }
+
   .hamburger {
     display: flex;
   }
- 
-  /* Hide desktop nav links on mobile */
+
   .nav-links {
     display: none;
   }
- 
+
   .footer-top {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
- 
+
   .footer-bottom-inner {
     flex-direction: column;
     gap: 0.5rem;
@@ -619,7 +622,7 @@ footer {
 }
 </style>
 </head>
- 
+
 <body>
 
 <!-- ══ HEADER ══ -->
@@ -653,35 +656,52 @@ footer {
 <!-- ══ PAGE HEADER ══ -->
 <section class="page-header">
   <div class="page-header-inner">
-    <p class="page-label">The Walk Thru — About</p>
-    <h1 class="page-title">OUR PEOPLE</h1>
-    <p class="page-subtitle">Where fashion strides forward;</p>
+    <p class="page-label">The Walk Thru — Archive</p>
+    <h1 class="page-title">Archive</h1>
+    <p class="page-subtitle">A visual collection of the past.</p>
   </div>
 </section>
 
-<!-- ══ ABOUT SECTION ══ -->
-<section class="about-section">
-  <div class="founders-grid">
-    <div class="founder">
-      <div class="founder-image">
-        <img src="../maya.png" alt="Maya" />
-      </div>
-      <h2 class="founder-name">Maya</h2>
-      <p class="founder-title">Co-Founder & Editor</p>
+<!-- ══ ARCHIVE GALLERY ══ -->
+<section class="archive-section">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="../archive1.png" alt="Archive 1" />
     </div>
-    
-    <div class="founder">
-      <div class="founder-image">
-        <img src="../cj.png" alt="CJ" />
-      </div>
-      <h2 class="founder-name">Charles Johnson</h2>
-      <p class="founder-title">Co-Founder & Outreach</p>
+    <div class="gallery-item">
+      <img src="../archive2.png" alt="Archive 2" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive3.png" alt="Archive 3" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive4.png" alt="Archive 4" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive5.png" alt="Archive 5" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive6.png" alt="Archive 6" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive7.png" alt="Archive 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive8.png" alt="Archive 8" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive9.png" alt="Archive 9" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive10.png" alt="Archive 10" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive11.png" alt="Archive 11" />
+    </div>
+    <div class="gallery-item">
+      <img src="../archive12.png" alt="Archive 12" />
     </div>
   </div>
-
-  <p class="about-text">
-    We’re curators, cultural critics, and storytellers. We are fans of the fit and students of the archives. We are inspired by identity, legacy, sports, streetwear’s collision with high fashion, and the everyday people who make sidewalks feel like runways. From peers to business partners, we join forces to spotlight the stories and movements that deserve the front row.
-  </p>
 </section>
 
 <!-- ══ MARQUEE ══ -->
