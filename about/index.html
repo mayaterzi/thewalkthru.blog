@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Blog — The Walk Thru</title>
+<title>About — The Walk Thru</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
@@ -199,38 +199,36 @@ nav {
   color: rgba(255,255,255,0.65);
 }
 
-/* ───────── FEATURED POST ───────── */
-.featured-section {
+/* ───────── ABOUT SECTION ───────── */
+.about-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2.5rem 0;
+  padding: 5rem 2.5rem;
 }
 
-.featured-label {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.40);
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.founder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.founder-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
   margin-bottom: 2rem;
 }
 
-.featured-post {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  padding-bottom: 5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-
-.featured-img-wrap {
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  background: rgba(255,255,255,0.05);
-}
-
-.featured-img-wrap img {
+.founder-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -238,150 +236,35 @@ nav {
   transition: transform 0.6s ease;
 }
 
-.featured-post:hover .featured-img-wrap img {
-  transform: scale(1.03);
+.founder:hover .founder-image img {
+  transform: scale(1.02);
 }
 
-.featured-content {}
-
-.featured-meta {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.40);
-  margin-bottom: 1.5rem;
-}
-
-.featured-title {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 900;
-  font-size: clamp(22px, 3vw, 40px);
-  line-height: 1.1;
-  text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.featured-excerpt {
-  font-family: 'Noto Serif', serif;
-  font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 1.8;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 2.5rem;
-}
-
-.read-link {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--white);
-  border-bottom: 1px solid rgba(255,255,255,0.5);
-  padding-bottom: 3px;
-  transition: opacity 0.2s ease;
-  display: inline-block;
-}
-
-.read-link:hover { opacity: 0.65; }
-
-/* ───────── BLOG GRID ───────── */
-.blog-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5rem 2.5rem;
-}
-
-.section-label {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.40);
-  margin-bottom: 3rem;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.5rem 2.5rem;
-  align-items: start;
-}
-
-/* Card */
-.blog-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.card-img-wrap {
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  background: rgba(255,255,255,0.05);
-  margin-bottom: 1.5rem;
-}
-
-.card-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.55s ease;
-}
-
-.blog-card:hover .card-img-wrap img {
-  transform: scale(1.04);
-}
-
-.card-meta {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 8px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
-  margin-bottom: 0.75rem;
-}
-
-.card-title {
+.founder-name {
   font-family: 'Unbounded', sans-serif;
   font-weight: 700;
-  font-size: clamp(13px, 1.4vw, 17px);
-  line-height: 1.25;
+  font-size: clamp(18px, 2vw, 24px);
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 0.85rem;
-  flex-grow: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
 }
 
-.card-excerpt {
+.founder-title {
   font-family: 'Noto Serif', serif;
-  font-size: 14px;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 1.25rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-style: italic;
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: rgba(255,255,255,0.65);
 }
 
-.card-link {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.60);
-  border-bottom: 1px solid rgba(255,255,255,0.22);
-  padding-bottom: 2px;
-  display: inline-block;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  margin-top: auto;
-}
-
-.card-link:hover {
-  color: var(--white);
-  border-color: var(--white);
+.about-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.85;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
 }
 
 /* ───────── MARQUEE ───────── */
@@ -424,7 +307,67 @@ nav {
   to   { transform: translateX(0); }
 }
 
-/* ───────── FOOTER ───────── */
+/* ───────── ABOUT SECTION ───────── */
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.founder {
+  text-align: center;
+}
+
+.founder-image {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 2rem;
+  max-width: 100%;
+  width: 100%;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.founder-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.5vw, 28px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.founder-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
 footer {
   padding: 5rem 2rem 0;
   border-top: 1px solid rgba(255,255,255,0.12);
@@ -580,15 +523,72 @@ footer {
   color: rgba(255,255,255,0.30);
 }
 
+/* ───────── ABOUT SECTION ───────── */
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.founder {
+  text-align: center;
+}
+
+.founder-image {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.founder-name {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.5vw, 28px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.founder-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* ───────── RESPONSIVE ───────── */
 @media (max-width: 900px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .featured-post {
+  .founders-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 
@@ -596,10 +596,24 @@ footer {
   .nav-logo img { height: 70px; }
   nav { height: 90px; padding: 0 1.25rem; }
   .page-header { padding-top: 90px; }
-  .page-header-inner { padding: 3rem 1.25rem 3rem; }
-  .featured-section { padding: 3rem 1.25rem 0; }
-  .blog-section { padding: 3rem 1.25rem; }
-  .blog-grid { grid-template-columns: 1fr; }
+  .page-header-inner { padding: 3rem 1.25rem 2rem; }
+  .about-section { padding: 2rem 1.25rem; }
+  .founders-grid { 
+    grid-template-columns: 1fr; 
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .founder-image {
+    margin-bottom: 1.5rem;
+    max-height: 70vw;
+  }
+  .founder-name {
+    font-size: clamp(16px, 2vw, 22px);
+  }
+  .about-text {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
 
   .hamburger {
     display: flex;
@@ -612,13 +626,16 @@ footer {
   .footer-top {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    padding: 0;
   }
 
   .footer-bottom-inner {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+    padding: 1.5rem 1.25rem;
   }
+}
 }
 </style>
 </head>
@@ -628,13 +645,13 @@ footer {
 <!-- ══ HEADER ══ -->
 <header>
   <nav>
-    <a class="nav-logo" href="https://thewalkthru.blog">
-      <img src="logo.png" alt="The Walk Thru" />
+    <a class="nav-logo" href="/">
+      <img src="./logo.png" alt="The Walk Thru" />
     </a>
     <ul class="nav-links">
-      <li><a href="https://thewalkthru.blog/blog" class="active">Blog</a></li>
-      <li><a href="https://thewalkthru.blog/archive">Archive</a></li>
-      <li><a href="https://thewalkthru.blog/about">About</a></li>
+      <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
+      <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
+      <li><a href="https://www.thewalkthru.blog/about" class="active">About</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span>
@@ -643,13 +660,13 @@ footer {
     </button>
   </nav>
 </header>
- 
+
 <!-- ══ MOBILE MENU ══ -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-content">
-    <a href="https://thewalkthru.blog/blog">Blog</a>
-    <a href="https://thewalkthru.blog/archive">Archive</a>
-    <a href="https://thewalkthru.blog/about">About</a>
+    <a href="https://www.thewalkthru.blog/blog">Blog</a>
+    <a href="https://www.thewalkthru.blog/archive">Archive</a>
+    <a href="https://www.thewalkthru.blog/about">About</a>
   </div>
 </div>
 
@@ -657,8 +674,8 @@ footer {
 <section class="page-header">
   <div class="page-header-inner">
     <p class="page-label">The Walk Thru — About</p>
-    <h1 class="page-title">OUR PEOPLE</h1>
-    <p class="page-subtitle">Where fashion strides forward;</p>
+    <h1 class="page-title">About</h1>
+    <p class="page-subtitle">Meet the founders behind The Walk Thru.</p>
   </div>
 </section>
 
@@ -667,7 +684,7 @@ footer {
   <div class="founders-grid">
     <div class="founder">
       <div class="founder-image">
-        <img src="../maya.png" alt="Maya" />
+        <img src="https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/maya.png" alt="Maya" />
       </div>
       <h2 class="founder-name">Maya</h2>
       <p class="founder-title">Co-Founder & Editor</p>
@@ -675,15 +692,18 @@ footer {
     
     <div class="founder">
       <div class="founder-image">
-        <img src="../cj.png" alt="CJ" />
+        <img src="https://raw.githubusercontent.com/[YOUR_USERNAME]/[YOUR_REPO]/main/cj.png" alt="CJ" />
       </div>
-      <h2 class="founder-name">Charles Johnson</h2>
-      <p class="founder-title">Co-Founder & Outreach</p>
+      <h2 class="founder-name">CJ</h2>
+      <p class="founder-title">Co-Founder & Creative Director</p>
     </div>
   </div>
 
   <p class="about-text">
-    We’re curators, cultural critics, and storytellers. We are fans of the fit and students of the archives. We are inspired by identity, legacy, sports, streetwear’s collision with high fashion, and the everyday people who make sidewalks feel like runways. From peers to business partners, we join forces to spotlight the stories and movements that deserve the front row.
+    The Walk Thru is a biweekly cultural blog at the intersection of fashion and sport. 
+    Founded by Maya and CJ, the publication explores how what we wear speaks to who we are, 
+    where we've been, and where we're headed. Through curated storytelling and visual culture, 
+    we unpack the narratives woven into every thread.
   </p>
 </section>
 
