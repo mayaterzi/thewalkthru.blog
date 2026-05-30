@@ -104,7 +104,6 @@ nav {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Mobile Menu Overlay */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -207,7 +206,6 @@ nav {
   margin-bottom: 3rem;
 }
 
-/* FEATURED IMAGE */
 .post-image {
   width: 100%;
   aspect-ratio: 4/5;
@@ -231,7 +229,6 @@ nav {
   margin-bottom: 3rem;
 }
 
-/* SECTION SUBTOPIC */
 .subtopic-title {
   font-family: 'Unbounded', sans-serif;
   font-weight: 700;
@@ -259,7 +256,6 @@ nav {
   margin-bottom: 0;
 }
 
-/* SECTION IMAGE */
 .section-image {
   width: 100%;
   aspect-ratio: 4/5;
@@ -276,7 +272,6 @@ nav {
   display: block;
 }
 
-/* OUTRO SECTION */
 .outro-title {
   font-family: 'Unbounded', sans-serif;
   font-weight: 700;
@@ -303,17 +298,13 @@ nav {
   margin-bottom: 0;
 }
 
-.outro-body p:last-child {
-  margin-bottom: 0;
-}
-
 /* ───────── ISSUE NAVIGATION ───────── */
 .issue-nav {
   max-width: 800px;
   margin: 0 auto;
   padding: 5rem 2.5rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 3rem;
@@ -335,13 +326,6 @@ nav {
   color: rgba(255,255,255,0.40);
 }
 
-.issue-nav-arrow {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 24px;
-  color: var(--white);
-  transition: opacity 0.2s ease;
-}
-
 .issue-nav-link {
   font-family: 'Unbounded', sans-serif;
   font-size: 11px;
@@ -353,10 +337,6 @@ nav {
 
 .issue-nav-link:hover {
   color: var(--white);
-}
-
-.issue-nav-item:hover .issue-nav-arrow {
-  opacity: 0.6;
 }
 
 /* ───────── MARQUEE ───────── */
@@ -401,314 +381,193 @@ nav {
 }
 
 /* ───────── FOOTER ───────── */
-
 footer {
-
   padding: 5rem 2rem 0;
-
   border-top: 1px solid rgba(255,255,255,0.12);
-
 }
 
 .footer-top {
-
   max-width: 1200px;
-
   margin: 0 auto;
-
   display: grid;
-
   grid-template-columns: 1.4fr 1fr 1.4fr;
-
   gap: 3rem;
-
 }
 
 .footer-col-label {
-
   font-family: 'Unbounded', sans-serif;
-
-  font-size: 10px; /* was 8px — larger */
-
+  font-size: 10px;
   letter-spacing: 0.20em;
-
   text-transform: uppercase;
-
-  color: rgba(255,255,255,0.50); /* slightly more visible */
-
+  color: rgba(255,255,255,0.50);
   margin-bottom: 1.25rem;
-
 }
 
-/* Brand col */
-
 .footer-brand-name {
-
   font-family: 'Unbounded', sans-serif;
-
-  font-size: 16px; /* was 13px */
-
+  font-size: 16px;
   font-weight: 700;
-
   text-transform: uppercase;
-
   letter-spacing: 0.08em;
-
   color: var(--white);
-
   margin-bottom: 0.6rem;
-
 }
 
 .footer-brand-tag {
-
   font-family: 'Noto Serif', serif;
-
   font-style: italic;
-
-  font-size: 15px; /* was 13px */
-
+  font-size: 15px;
   color: rgba(255,255,255,0.55);
-
   margin-bottom: 1.75rem;
-
 }
 
-/* Social icons */
-
 .social-row {
-
   display: flex;
-
   gap: 0.75rem;
-
 }
 
 .social-link {
-
   width: 36px;
-
   height: 36px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border: 1px solid rgba(255,255,255,0.22);
-
   color: rgba(255,255,255,0.60);
-
   transition: color 0.2s ease, border-color 0.2s ease;
-
   flex-shrink: 0;
-
 }
 
 .social-link:hover {
-
   color: var(--white);
-
   border-color: var(--white);
-
 }
 
 .social-link svg {
-
   width: 15px;
-
   height: 15px;
-
   fill: currentColor;
-
 }
 
-/* Nav col */
-
 .footer-nav-list {
-
   list-style: none;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 0.9rem;
-
 }
 
 .footer-nav-list a {
-
   font-family: 'Unbounded', sans-serif;
-
-  font-size: 12px; /* was 9px — larger */
-
+  font-size: 12px;
   text-transform: uppercase;
-
   letter-spacing: 0.16em;
-
   color: rgba(255,255,255,0.60);
-
   transition: color 0.2s ease;
-
 }
 
 .footer-nav-list a:hover { color: var(--white); }
 
-/* Newsletter col */
-
-.signup-form {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.7rem;
-
-}
-
 .signup-input {
-
   background: transparent;
-
   border: 1px solid rgba(255,255,255,0.25);
-
   color: var(--white);
-
   font-family: 'Noto Serif', serif;
-
-  font-size: 15px; /* was 14px */
-
+  font-size: 15px;
   padding: 0.8rem 1rem;
-
   outline: none;
-
   width: 100%;
-
   transition: border-color 0.2s ease;
-
   -webkit-appearance: none;
-
   appearance: none;
-
+  margin-bottom: 0.7rem;
 }
 
 .signup-input::placeholder {
-
   color: rgba(255,255,255,0.35);
-
 }
 
 .signup-input:focus {
-
   border-color: var(--white);
-
 }
 
 .signup-btn {
-
   font-family: 'Unbounded', sans-serif;
-
-  font-size: 10px; /* was 9px */
-
+  font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 0.18em;
-
   text-transform: uppercase;
-
   background: var(--white);
-
   color: var(--dark);
-
   border: none;
-
   padding: 0.9rem 1.5rem;
-
   cursor: pointer;
-
   width: 100%;
-
   transition: opacity 0.2s ease;
-
+  margin-bottom: 0.7rem;
 }
 
 .signup-btn:hover { opacity: 0.85; }
 
 .signup-note {
-
   font-family: 'Noto Serif', serif;
-
   font-style: italic;
-
-  font-size: 12px; /* was 11px */
-
+  font-size: 12px;
   color: rgba(255,255,255,0.35);
-
 }
 
-/* Bottom bar */
-
 .footer-bottom {
-
   margin-top: 4rem;
-
   border-top: 1px solid rgba(255,255,255,0.10);
-
 }
 
 .footer-bottom-inner {
-
   max-width: 1200px;
-
   margin: 0 auto;
-
   padding: 1.5rem 0;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
 }
 
 .footer-bottom-inner p {
-
   font-family: 'Unbounded', sans-serif;
-
-  font-size: 9px; /* was 8px */
-
+  font-size: 9px;
   letter-spacing: 0.12em;
-
   text-transform: uppercase;
-
   color: rgba(255,255,255,0.30);
-
 }
 
 /* ───────── RESPONSIVE ───────── */
-
 @media (max-width: 768px) {
-
   .nav-logo img { height: 70px; }
-
   nav { height: 90px; padding: 0 1.25rem; }
-
-  .hero { padding-top: 90px; }
-
-  .hero-heading {
-
-    font-size: clamp(28px, 5vw, 44px);
-
-    line-height: 1.1;
-
+  .post-header { padding-top: 90px; }
+  .post-header-inner { padding: 3rem 1.25rem 2rem; }
+  .post-section { padding: 3rem 1.25rem; }
+  
+  .hamburger {
+    display: flex;
   }
-
-  .hero-subheading {
-
+  
+  .nav-links {
     display: none;
+  }
+  
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -756,7 +615,7 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
 
   <!-- HEADER IMAGE -->
   <div class="post-image">
-    <img src="issue25_1.png" alt="Derby" />
+    <img src="../issue25_1.png" alt="Derby" />
   </div>
   <p class="image-caption">Eric Williams, Churchill Downs, 2016. Photo via Mark Zerof/USA Today Sports.</p>
 
@@ -767,7 +626,7 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
     <p>In the years since, the race has contracted slightly and grown enormously in every other direction. Derby Week now brings over $400 million to the local economy each year. The race is broadcast globally. And yet the basic shape of it remains: three-year-old horses, one shot, Churchill Downs. You only get to run the Kentucky Derby once in your life, and so does the horse.</p>
   </div>
   <div class="section-image">
-    <img src="issue25_2.png" alt="Oirign" />
+    <img src="../issue25_2.png" alt="Origin" />
   </div>
   <p class="image-caption">1973 Kentucky Derby winner. Photo via Business Insider.</p>
 
@@ -778,27 +637,27 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
     <p>Louisville itself is inseparable from the race. The city vibrates during Derby Week in ways that are hard to describe to someone who hasn't experienced it. Hotels fill months in advance. The Kentucky Oaks, run the day before, draws its own massive crowd. And every year, in the days leading up to the first Saturday in May, Louisville becomes something else entirely — part sporting event, part cultural festival, part runway. The streets around Churchill Downs fill with color. The restaurants fill with strangers who've traveled from everywhere. And at the track itself, the stands become one of the most unlikely fashion spectacles in American life.</p>
   </div>
 
- <!-- SECTION 3 -->
-<h2 class="subtopic-title">What's Owed</h2>
-<div class="subtopic-body">
-  <p>But the visual language of the Derby, its elegance, its codes, its sense of occasion, did not emerge in isolation. It exists alongside a more complicated history of who was allowed to participate and who was not.</p>
-  <p>In the early decades of the Kentucky Derby, Black jockeys dominated the sport. Thirteen of the first fifteen Derbies were won by Black riders, including Isaac Murphy, one of the greatest in racing history. Their presence defined the early visual and athletic identity of the event.</p>
-</div>
+  <!-- SECTION 3 -->
+  <h2 class="subtopic-title">What's Owed</h2>
+  <div class="subtopic-body">
+    <p>But the visual language of the Derby, its elegance, its codes, its sense of occasion, did not emerge in isolation. It exists alongside a more complicated history of who was allowed to participate and who was not.</p>
+    <p>In the early decades of the Kentucky Derby, Black jockeys dominated the sport. Thirteen of the first fifteen Derbies were won by Black riders, including Isaac Murphy, one of the greatest in racing history. Their presence defined the early visual and athletic identity of the event.</p>
+  </div>
 
-<div class="section-image">
- <img src="issue25_3.png" alt="Murphy" />
-</div>
-<p class="image-caption">Isaac Burns Murphy. Photo via Black History Heroes.</p>
+  <div class="section-image">
+    <img src="../issue25_3.png" alt="Murphy" />
+  </div>
+  <p class="image-caption">Isaac Burns Murphy. Photo via Black History Heroes.</p>
 
-<div class="subtopic-body">
-  <p>Among them was Jimmy Winkfield, who won back-to-back Derbies in 1901 and 1902. His career traces the exact moment the sport began to close its doors. As opportunities in the United States disappeared under Jim Crow, Winkfield was forced abroad, continuing his career in Europe where he found success racing in France and Russia. His trajectory reflects not just exclusion, but displacement.</p>
-  <p>To understand the Derby as fashion is to understand this tension. The event is a study in surfaces: fabric, color, silhouette. But beneath that surface is authorship. Who builds the culture, who wears it, who is seen inside of it.</p>
-</div>
+  <div class="subtopic-body">
+    <p>Among them was Jimmy Winkfield, who won back-to-back Derbies in 1901 and 1902. His career traces the exact moment the sport began to close its doors. As opportunities in the United States disappeared under Jim Crow, Winkfield was forced abroad, continuing his career in Europe where he found success racing in France and Russia. His trajectory reflects not just exclusion, but displacement.</p>
+    <p>To understand the Derby as fashion is to understand this tension. The event is a study in surfaces: fabric, color, silhouette. But beneath that surface is authorship. Who builds the culture, who wears it, who is seen inside of it.</p>
+  </div>
 
-<div class="section-image">
-  <img src="issue25_4.png" alt="Winkfield" />
-</div>
-<p class="image-caption">Jimmy Winkfield. Photo via Black Past.</p>
+  <div class="section-image">
+    <img src="../issue25_4.png" alt="Winkfield" />
+  </div>
+  <p class="image-caption">Jimmy Winkfield. Photo via Black Past.</p>
 
   <!-- SECTION 4 -->
   <h2 class="subtopic-title">Two Runways, One Race</h2>
@@ -816,7 +675,7 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
     <p>Louisville's milliners understand this intimately. Many work year-round, building pieces that sit somewhere between couture and costume. Their work exists for a single weekend, a single outfit, a single moment captured somewhere between the paddock and the post parade.</p>
   </div>
   <div class="section-image">
-    <img src="issue25_5.png" alt="Oaks" />
+    <img src="../issue25_5.png" alt="Oaks" />
   </div>
   <p class="image-caption">Kentucky Oaks at Churchill Downs, 2026. Photo via Matt Stone/Courier Journal.</p>
 
@@ -835,7 +694,7 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
     <p>There is a quiet contradiction here. The crowd dresses for attention, but the race itself demands focus elsewhere. To appreciate the Derby fully is to hold both truths at once, the constructed image and the living animal at its center.</p>
   </div>
   <div class="section-image">
-   <img src="issue25_6.png" alt="Golden" />
+    <img src="../issue25_6.png" alt="Golden" />
   </div>
   <p class="image-caption">Golden Tempo, 2026 Kentucky Derby winner. 1st woman-trained thoroughbred. Photo via NPR.</p>
 
@@ -851,6 +710,7 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
 
 <!-- ══ ISSUE NAVIGATION ══ -->
 <section class="post-section">
+  <div class="issue-nav">
     <div class="issue-nav-item">
       <span class="issue-nav-label">Back to</span>
       <a href="https://thewalkthru.blog/blog" class="issue-nav-link">All Issues</a>
@@ -891,41 +751,28 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
     <span class="marquee-sep">•</span>
     <span class="marquee-item">BOLD</span>
     <span class="marquee-sep">•</span>
-    <span class="marquee-item">AUTHENTIC</span>
-    <span class="marquee-sep">•</span>
-    <span class="marquee-item">CURATED</span>
-    <span class="marquee-sep">•</span>
-    <span class="marquee-item">BOLD</span>
-    <span class="marquee-sep">•</span>
   </div>
 </section>
 
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-top">
- 
     <!-- Brand col -->
     <div>
       <p class="footer-col-label">The Walk Thru</p>
       <p class="footer-brand-name">The Walk Thru</p>
       <p class="footer-brand-tag">Where fashion strides forward;</p>
- 
       <div class="social-row">
-        <!-- Instagram -->
         <a class="social-link" href="https://instagram.com/walkthru.blog" aria-label="Instagram" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
           </svg>
         </a>
- 
-        <!-- LinkedIn -->
         <a class="social-link" href="https://www.linkedin.com/company/avantsocialclub/posts/?feedView=all" aria-label="LinkedIn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
         </a>
- 
-        <!-- TikTok -->
         <a class="social-link" href="https://www.tiktok.com/@walkthru.blog" aria-label="TikTok" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24">
             <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.16 8.16 0 004.77 1.52V7.1a4.85 4.85 0 01-1-.41z"/>
@@ -933,8 +780,7 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
         </a>
       </div>
     </div>
- 
-    <!-- Nav col — contact removed -->
+    <!-- Nav col -->
     <div>
       <ul class="footer-nav-list">
         <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
@@ -942,7 +788,6 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
         <li><a href="https://www.thewalkthru.blog/about">About</a></li>
       </ul>
     </div>
- 
     <!-- Newsletter col -->
     <div>
       <p class="footer-col-label">Walk With Us</p>
@@ -971,29 +816,26 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
         </div>
       </div>
     </div>
- 
   </div>
- 
   <div class="footer-bottom">
     <div class="footer-bottom-inner">
       <p>© 2026 The Walk Thru. All rights reserved.</p>
       <p>thewalkthru.blog@gmail.com</p>
     </div>
   </div>
- 
 </footer>
- 
+
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 <script>
   // Mobile menu toggle
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
- 
+
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
   });
- 
+
   // Close menu when a link is clicked
   const menuLinks = mobileMenu.querySelectorAll('a');
   menuLinks.forEach(link => {
@@ -1003,7 +845,6 @@ Before the hat is pinned and the mint julep is poured, there stands a horse. Tha
     });
   });
 </script>
- 
+
 </body>
 </html>
-
