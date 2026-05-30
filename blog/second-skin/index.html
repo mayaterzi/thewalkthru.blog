@@ -1,1 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Courtside: The Cultural Seat — The Walk Thru</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ───────── BASE ───────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFFFFF;
+  --dark:  #340E0A;
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'Noto Serif', serif;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ───────── HEADER ───────── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 110px;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 2px; }
+
+/* ───────── MOBILE MENU ───────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 14, 10, 0.98);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-top: 110px;
+}
+
+.mobile-menu.active {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-menu-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 3rem 2.5rem;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-content a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu-content a:hover {
+  opacity: 0.65;
+}
+
+/* ───────── POST HEADER ───────── */
+.post-header {
+  padding-top: 110px;
+  padding-bottom: 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.post-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 4rem;
+}
+
+.post-date {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.25rem;
+}
+
+.post-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+/* ───────── POST CONTENT ───────── */
+.post-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.intro-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 3rem;
+}
+
+/* FEATURED IMAGE */
+.post-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1rem;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 3rem;
+}
+
+/* SECTION SUBTOPIC */
+.subtopic-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.subtopic-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+}
+
+.subtopic-body p {
+  margin-bottom: 1.5rem;
+}
+
+.subtopic-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* SECTION IMAGE */
+.section-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OUTRO SECTION */
+.outro-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 28px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.outro-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+}
+
+.outro-body p {
+  margin-bottom: 1.5rem;
+}
+
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ───────── ISSUE NAVIGATION ───────── */
+.issue-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 3rem;
+}
+
+.issue-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.issue-nav-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+}
+
+.issue-nav-arrow {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.issue-nav-link {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  transition: color 0.2s ease;
+}
+
+.issue-nav-link:hover {
+  color: var(--white);
+}
+
+.issue-nav-item:hover .issue-nav-arrow {
+  opacity: 0.6;
+}
+
+/* ───────── MARQUEE ───────── */
+.marquee-section {
+  padding: 4rem 0;
+  overflow: hidden;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin-top: 5rem;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-reverse 48s linear infinite;
+}
+
+.marquee-item {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 2.5rem;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(20px, 3vw, 36px);
+  color: rgba(255,255,255,0.35);
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ───────── FOOTER ───────── */
+footer {
+  padding: 5rem 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 3rem;
+}
+
+.footer-col-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand-name {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.footer-brand-tag {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.75rem;
+}
+
+.social-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.60);
+  transition: color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.social-link:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.social-link svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-nav-list a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.60);
+  transition: color 0.2s ease;
+}
+
+.footer-nav-list a:hover { color: var(--white); }
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.signup-input {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  font-family: 'Noto Serif', serif;
+  font-size: 15px;
+  padding: 0.8rem 1rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.signup-input::placeholder { color: rgba(255,255,255,0.35); }
+.signup-input:focus { border-color: var(--white); }
+
+.signup-btn {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--white);
+  color: var(--dark);
+  border: none;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.signup-btn:hover { opacity: 0.85; }
+
+.signup-note {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-inner p {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.30);
+}
+
+/* ───────── RESPONSIVE ───────── */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-post {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo img { height: 70px; }
+  nav { height: 90px; padding: 0 1.25rem; }
+  .page-header { padding-top: 90px; }
+  .page-header-inner { padding: 3rem 1.25rem 3rem; }
+  .featured-section { padding: 3rem 1.25rem 0; }
+  .blog-section { padding: 3rem 1.25rem; }
+  .blog-grid { grid-template-columns: 1fr; }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <nav>
+    <a class="nav-logo" href="https://thewalkthru.blog">
+      <img src="../logo.png" alt="The Walk Thru" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thewalkthru.blog/blog" class="active">Blog</a></li>
+      <li><a href="https://thewalkthru.blog/archive">Archive</a></li>
+      <li><a href="https://thewalkthru.blog/about">About</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <a href="https://thewalkthru.blog/blog">Blog</a>
+    <a href="https://thewalkthru.blog/archive">Archive</a>
+    <a href="https://thewalkthru.blog/about">About</a>
+  </div>
+</div>
+
+<!-- ══ POST HEADER ══ -->
+<section class="post-header">
+  <div class="post-header-inner">
+    <p class="post-date">Tuesday, Apr 21, 2026</p>
+    <h1 class="post-title">Second Skin: Swimwear Beyond the Shore</h1>
+  </div>
+</section>
+
+<!-- ══ POST CONTENT ══ -->
+<section class="post-section">
+  
+  <!-- INTRO -->
+  <p class="intro-body">
+Swimwear has never just been about swimming. It sits at the intersection of exposure and control, freedom and scrutiny. Unlike most garments, it asks the body to be seen before it asks to be styled. And because of that, it has always carried weight far beyond fabric. What we wear in the water reflects what a culture allows on land. Swimwear evolves with shifting ideas of modesty, gender, power, and performance. It reveals just as much about society as it does about skin. Where surf style speaks to movement, swimwear speaks to visibility. It is less about the act and more about the quiet confidence.
+  </p>
+
+  <!-- HEADER IMAGE -->
+  <div class="post-image">
+    <img src="issue24_1.png" alt="Shore" />
+  </div>
+  <p class="image-caption">Emilio Pucci Resort 2023 collection. Photo via Emilio Pucci.</p>
+
+  <!-- SECTION 1 -->
+  <h2 class="subtopic-title">The Covered Body</h2>
+  <div class="subtopic-body">
+    <p>Before swimwear became fashionable, it was restricted. In the 18th and 19th centuries, people entered the water fully clothed. Women wore long bathing gowns, often weighted at the hem to prevent fabric from rising. Modesty wasn’t suggested; it was enforced. The ocean was not a place for display; it was a controlled environment where the body remained hidden.</p>
+    <p>Even early swimsuits were designed more for propriety than performance. Heavy wool, high necklines, and layered construction made movement difficult. The purpose wasn’t to swim well, it was to be seen appropriately. Water was freedom, but clothing made sure it stayed limited.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue24_2.png" alt="Covered" />
+  </div>
+  <p class="image-caption">Eagle Head, Manchester, Massachusetts (High Tide), 1870. Photo via Winslow Homer.</p>
+
+  <!-- SECTION 2 -->
+  <h2 class="subtopic-title">The Bikini Line</h2>
+  <div class="subtopic-body">
+    <p>In 1946, everything changed. The introduction of the bikini redefined swimwear entirely. Named after a nuclear testing site, the design was intentionally provocative. It reduced fabric to its minimum and forced a cultural confrontation with the exposed body.</p>
+    <p>At first, it was rejected. Many countries banned it. It was considered too radical, too revealing, too disruptive. But over time, resistance gave way to normalization. What was once scandal became standard. The bikini didn’t just alter silhouettes, it shifted power. It challenged who gets to decide what is appropriate and who gets to occupy space without apology.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue24_3.png" alt="Riveria" />
+  </div>
+  <p class="image-caption">The French Riviera All Year Round, Herve Baille, 1954.</p>
+
+  <!-- SECTION 3 -->
+  <h2 class="subtopic-title">The Body as Statement</h2>
+  <div class="subtopic-body">
+    <p>By the 1970s and 80s, swimwear became inseparable from identity. Cuts grew higher, silhouettes more daring. The one-piece transformed from conservative to sculptural. Swimwear began to accentuate rather than conceal.</p>
+    <p>This era also introduced a new kind of visibility. The body was no longer just present; it was styled, posed, and broadcast. Beaches became stages, and swimwear became costume as much as clothing. At the same time, athletic swimwear evolved in parallel. Competitive suits focused on hydrodynamics, compression, and performance. Two worlds emerged: one for movement, one for image.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue24_4.png" alt="Body" />
+  </div>
+  <p class="image-caption">1970s swimwear. Photo via Click Americana.</p>
+
+  <!-- SECTION 4 -->
+  <h2 class="subtopic-title">Global Interpretation</h2>
+  <div class="subtopic-body">
+    <p>Swimwear does not exist in one universal form. It adapts to culture, religion, and geography. In some regions, full-coverage swim garments reflect values of modesty while still allowing participation in water culture. In others, minimalism dominates, shaped by climate and social norms.</p>
+    <p>Tourism has complicated this dynamic. Beaches often become spaces where different standards of dress coexist, sometimes in tension. What is considered normal in one place may be controversial in another. Swimwear becomes a visual map of cultural difference, where bodies carry both personal and collective meaning.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue24_5.png" alt="Spike" />
+  </div>
+  <p class="image-caption">Prince and Spike Lee at NBA All-Star Game at Madison Square Garden, 1998. Photo via TIM CLARY/AFP via Getty Images.</p>
+
+  <!-- SECTION 5 -->
+  <h2 class="subtopic-title">Everyone Watches the Watchers</h2>
+  <div class="subtopic-body">
+    <p>The most important shift may be this: courtside is now participatory media. Fans track watches, sneakers, handbags, reactions, who sits next to whom, who receives camera cuts, and who brands themselves successfully through presence alone. The seat itself became social currency.</p>
+    <p>What once represented proximity to basketball now represents proximity to culture at large. Fashion, music, sports, celebrity, and wealth collapse into the same frame for a few seconds at a time.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue26_5.png" alt="Poolside" />
+  </div>
+  <p class="image-caption">Poolside. Photo via Slim Aarons.</p>
+
+  <!-- SECTION 6 -->
+  <h2 class="subtopic-title">Luxury Interpretation</h2>
+  <div class="subtopic-body">
+    <p>Luxury swimwear has never been about utility. It doesn’t ask how well something moves in water, but how it moves on the body. Swimwear becomes less about swimming and more about surface, composition, and control. It is design at its most exposed.</p>
+    <p>Where mass-market swimwear often simplifies, luxury complicates. Fabric is treated as canvas. The body becomes both structure and subject. Every cut, every line, every print is intentional, because there is nowhere for it to hide.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue24_6.png" alt="Pucci" />
+  </div>
+  <p class="image-caption">Emilio Pucci La Grotta Azzurra collection. Photo via Emilio Pucci.</p>
+
+  <!-- SECTION 7 -->
+  <h2 class="subtopic-title">On the Runway</h2>
+  <div class="subtopic-body">
+    <p>When swimwear enters the runway, it loses its original purpose. It is no longer about performance or practicality, it becomes concept.</p>
+    <p>Designers treat swimwear as a foundation rather than a finished product. A bikini becomes eveningwear when paired with sheer layers or exaggerated tailoring. A one-piece is reconstructed into bodysuits, sculptural forms, or hybrid garments that blur the line between lingerie and ready-to-wear.</p>
+    <p>Luxury houses have recontextualized swimwear entirely. What was once minimal is now maximal. Hardware replaces simplicity. Cuts become architectural. Fabrics shift from nylon to silk, mesh, and latex. On the runway, swimwear is stripped of its environment and rebuilt as fashion language. It becomes less about water and more about form.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue24_7.png" alt="Missoni" />
+  </div>
+  <p class="image-caption">Missoni Spring/Summer 2026. Photo via Coeval.</p>
+
+  <!-- OUTRO -->
+  <h2 class="outro-title">The Walk Forward</h2>
+  <div class="outro-body">
+    <p>Swimwear has outgrown the shoreline. It moves through industries, geographies, and narratives, adapting to each while maintaining its tension between exposure and control.</p>
+    <p>To see swimwear today is to see more than design. It is to see how the world chooses to present the body, who gets to be visible, and under what conditions.</p>
+    <p>And whether on a runway, a screen, or a distant coastline, the question remains the same: Who is swimwear really for?</p>
+  </div>
+
+</section>
+
+<!-- ══ ISSUE NAVIGATION ══ -->
+<section class="post-section">
+    <div class="issue-nav-item">
+      <span class="issue-nav-label">Back to</span>
+      <a href="https://thewalkthru.blog/blog" class="issue-nav-link">All Issues</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<section class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+
+    <div>
+      <p class="footer-col-label">The Walk Thru</p>
+      <p class="footer-brand-name">The Walk Thru</p>
+      <p class="footer-brand-tag">Where fashion strides forward;</p>
+
+      <div class="social-row">
+        <a class="social-link" href="https://instagram.com/walkthru.blog" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/company/avantsocialclub/posts/?feedView=all" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@walkthru.blog" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.16 8.16 0 004.77 1.52V7.1a4.85 4.85 0 01-1-.41z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <ul class="footer-nav-list">
+        <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
+        <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
+        <li><a href="https://www.thewalkthru.blog/about">About</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-label">Walk With Us</p>
+      <div class="signup-form">
+        <input class="signup-input" type="email" placeholder="Email address" aria-label="Email address" />
+        <button class="signup-btn" type="button">Sign Up</button>
+        <p class="signup-note">We value and respect your privacy.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© 2026 The Walk Thru. All rights reserved.</p>
+      <p>thewalkthru.blog@gmail.com</p>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
 
