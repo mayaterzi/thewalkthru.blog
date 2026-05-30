@@ -819,7 +819,477 @@ footer {
   </div>
 </section>
 
-<!-- ══ FEATURED POST ══ -->
+/* FEATURED POST */
+.featured-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 0;
+}
+ 
+.featured-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+  margin-bottom: 2rem;
+}
+ 
+.featured-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+ 
+.featured-img-wrap {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+ 
+.featured-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+ 
+.featured-post:hover .featured-img-wrap img { transform: scale(1.03); }
+ 
+.featured-meta {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+  margin-bottom: 1.5rem;
+}
+ 
+.featured-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(22px, 3vw, 40px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+ 
+.featured-excerpt {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 2.5rem;
+}
+ 
+.read-link {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  padding-bottom: 3px;
+  display: inline-block;
+}
+ 
+.read-link:hover { opacity: 0.65; }
+ 
+/* BLOG GRID */
+.blog-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+ 
+.section-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+  margin-bottom: 3rem;
+}
+ 
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem 2.5rem;
+  align-items: start;
+}
+ 
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+ 
+.card-img-wrap {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+ 
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+ 
+.blog-card:hover .card-img-wrap img { transform: scale(1.04); }
+ 
+.card-meta {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 0.75rem;
+}
+ 
+.card-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(13px, 1.4vw, 17px);
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.85rem;
+  flex-grow: 1;
+}
+ 
+.card-excerpt {
+  font-family: 'Noto Serif', serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+ 
+.card-link {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.60);
+  border-bottom: 1px solid rgba(255,255,255,0.22);
+  padding-bottom: 2px;
+  display: inline-block;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  margin-top: auto;
+}
+ 
+.card-link:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+ 
+/* MARQUEE */
+.marquee-section {
+  padding: 4rem 0;
+  overflow: hidden;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+ 
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-reverse 48s linear infinite;
+}
+ 
+.marquee-item {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 2.5rem;
+  white-space: nowrap;
+}
+ 
+.marquee-sep {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(20px, 3vw, 36px);
+  color: rgba(255,255,255,0.35);
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+}
+ 
+@keyframes scroll-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+ 
+/* FOOTER */
+footer {
+  padding: 5rem 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+ 
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 3rem;
+}
+ 
+.footer-col-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  margin-bottom: 1.25rem;
+}
+ 
+.footer-brand-name {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+ 
+.footer-brand-tag {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.75rem;
+}
+ 
+.social-row {
+  display: flex;
+  gap: 0.75rem;
+}
+ 
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.60);
+  transition: color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+ 
+.social-link:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+ 
+.social-link svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+ 
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+ 
+.footer-nav-list a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.60);
+  transition: color 0.2s ease;
+}
+ 
+.footer-nav-list a:hover { color: var(--white); }
+ 
+.signup-input {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  font-family: 'Noto Serif', serif;
+  font-size: 15px;
+  padding: 0.8rem 1rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease;
+  margin-bottom: 0.7rem;
+}
+ 
+.signup-input::placeholder { color: rgba(255,255,255,0.35); }
+.signup-input:focus { border-color: var(--white); }
+ 
+.signup-btn {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--white);
+  color: var(--dark);
+  border: none;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.2s ease;
+  margin-bottom: 0.7rem;
+}
+ 
+.signup-btn:hover { opacity: 0.85; }
+ 
+.signup-note {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+ 
+.footer-bottom {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+ 
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.footer-bottom-inner p {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.30);
+}
+ 
+/* ═════════ RESPONSIVE ═════════ */
+ 
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .nav-logo img { height: 70px; }
+  nav { height: 90px; padding: 0 1.25rem; }
+  .page-header { padding-top: 90px; }
+  .page-header-inner { padding: 3rem 1.25rem 2rem; }
+  
+  .featured-section { padding: 3rem 1.25rem 0; }
+  .featured-post {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .featured-img-wrap { aspect-ratio: 4/5; }
+  
+  .blog-section { padding: 3rem 1.25rem; }
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+  
+  .card-img-wrap {
+    aspect-ratio: 3/4;
+    margin-bottom: 1rem;
+  }
+  
+  .card-meta { font-size: 7px; }
+  .card-title { font-size: clamp(12px, 2vw, 15px); line-height: 1.3; }
+  .card-excerpt { font-size: 13px; line-height: 1.5; }
+  .card-link { font-size: 8px; }
+ 
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
+  
+  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-bottom-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+ 
+@media (max-width: 480px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .blog-section { padding: 2rem 1rem; }
+  .page-header-inner { padding: 2rem 1rem 1.5rem; }
+  .featured-section { padding: 2rem 1rem 0; }
+  
+  .card-img-wrap {
+    aspect-ratio: 3/4;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-title { font-size: clamp(11px, 3vw, 13px); }
+  .card-excerpt { font-size: 12px; line-height: 1.4; }
+}
+</style>
+</head>
+<body>
+ 
+<!-- HEADER -->
+<header>
+  <nav>
+    <a class="nav-logo" href="https://thewalkthru.blog">
+      <img src="logo.png" alt="The Walk Thru" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thewalkthru.blog/blog" class="active">Blog</a></li>
+      <li><a href="https://thewalkthru.blog/archive">Archive</a></li>
+      <li><a href="https://thewalkthru.blog/about">About</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+ 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <a href="https://thewalkthru.blog/blog">Blog</a>
+    <a href="https://thewalkthru.blog/archive">Archive</a>
+    <a href="https://thewalkthru.blog/about">About</a>
+  </div>
+</div>
+ 
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <p class="page-label">The Walk Thru — Issues</p>
+    <h1 class="page-title">Blog</h1>
+    <p class="page-subtitle">Fashion, sport, and the stories between them.</p>
+  </div>
+</section>
+ 
+<!-- FEATURED POST -->
 <div class="featured-section">
   <p class="featured-label">Latest Issue</p>
   <a href="https://thewalkthru.blog/blog/courtside" class="featured-post">
@@ -829,295 +1299,127 @@ footer {
     <div class="featured-content">
       <p class="featured-meta">May 19, 2026</p>
       <h2 class="featured-title">Courtside: The Cultural Seat</h2>
-      <p class="featured-excerpt">
-        Basketball turned fashion into performance long before luxury understood content strategy. Sneakers became status objects, team jackets became archive pieces, and athletes became editors of masculinity, silhouette, jewelry, color, and posture in real time. Courtside culture expanded that language outward; actors, rappers, designers, athletes, models, and executives all participating in the same visual conversation. Courtside was never just about basketball; it became fashion's most visible front row.
-      </p>
+      <p class="featured-excerpt">Basketball turned fashion into performance long before luxury understood content strategy. Sneakers became status objects, team jackets became archive pieces, and athletes became editors of masculinity, silhouette, jewelry, color, and posture in real time.</p>
       <span class="read-link">Read Issue →</span>
     </div>
   </a>
 </div>
-
-<!-- ══ BLOG GRID ══ -->
+ 
+<!-- BLOG GRID -->
 <section class="blog-section">
   <p class="section-label">All Issues</p>
   <div class="blog-grid">
-    
-    <!-- Issue 25 -->
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/under-the-brim" class="card-img-wrap">
-        <img src="../issue25_1.png" alt="Under the Brim: The Kentucky Derby" />
+        <img src="issue25_1.png" alt="Under the Brim: The Kentucky Derby" />
       </a>
       <p class="card-meta">May 5, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/under-the-brim">Under the Brim: The Kentucky Derby</a></h3>
-      <p class="card-excerpt">Before the hat is pinned and the mint julep is poured, there stands a horse. The Kentucky Derby exists in layers: heritage and spectacle, sport and image.</p>
+      <p class="card-excerpt">Before the hat is pinned and the mint julep is poured, there stands a horse. The Kentucky Derby exists in layers.</p>
       <a href="https://thewalkthru.blog/blog/under-the-brim" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 24 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/second-skin" class="card-img-wrap">
-        <img src="../issue24_1.png" alt="Second Skin: Swimwear Beyond the Shore" />
+        <img src="issue24_1.png" alt="Second Skin: Swimwear Beyond the Shore" />
       </a>
       <p class="card-meta">Apr 21, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/second-skin">Second Skin: Swimwear Beyond the Shore</a></h3>
-      <p class="card-excerpt">Swimwear has never just been about swimming. It sits at the intersection of exposure and control, freedom and scrutiny. What we wear in the water reflects what a culture allows on land.</p>
+      <p class="card-excerpt">Swimwear has never just been about swimming. It sits at the intersection of exposure and control.</p>
       <a href="https://thewalkthru.blog/blog/second-skin" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 23 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/ritual-of-the-ring" class="card-img-wrap">
-        <img src="../issue23_1.png" alt="Ritual of the Ring: Float Like Fabric" />
+        <img src="issue23_1.png" alt="Ritual of the Ring: Float Like Fabric" />
       </a>
       <p class="card-meta">Apr 7, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/ritual-of-the-ring">Ritual of the Ring: Float Like Fabric</a></h3>
-      <p class="card-excerpt">Before boxing became aesthetic, it was a ritual. The walk to the ring is as deliberate as the fight itself, and over time, that walk has become one of the most influential runways in sport.</p>
+      <p class="card-excerpt">Before boxing became aesthetic, it was a ritual. The walk to the ring is as deliberate as the fight itself.</p>
       <a href="https://thewalkthru.blog/blog/ritual-of-the-ring" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 22 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/built-for-terrain" class="card-img-wrap">
-        <img src="../issue22_1.png" alt="Built for Terrain: The Trail as Design Blueprint" />
+        <img src="issue22_1.png" alt="Built for Terrain: The Trail as Design Blueprint" />
       </a>
       <p class="card-meta">Mar 24, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/built-for-terrain">Built for Terrain: The Trail as Design Blueprint</a></h3>
-      <p class="card-excerpt">Outdoor sports have done more than inspire fashion. They have rewritten its design logic. What now gets labeled gorpcore did not begin as experiment — it began on rock faces and alpine routes.</p>
+      <p class="card-excerpt">Outdoor sports have done more than inspire fashion. They have rewritten its design logic.</p>
       <a href="https://thewalkthru.blog/blog/built-for-terrain" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 21 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/surfs-up" class="card-img-wrap">
-        <img src="../issue21_1.png" alt="Surfs Up: Coast to Coast Style" />
+        <img src="issue21_1.png" alt="Surfs Up: Coast to Coast Style" />
       </a>
       <p class="card-meta">Mar 10, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/surfs-up">Surfs Up: Coast to Coast Style</a></h3>
-      <p class="card-excerpt">Coastal style has spoken louder and more intentionally than most urban wardrobes for centuries. Surf style grew out of necessity but evolved into something expressive, rebellious, and deeply personal.</p>
+      <p class="card-excerpt">Coastal style has spoken louder and more intentionally than most urban wardrobes for centuries.</p>
       <a href="https://thewalkthru.blog/blog/surfs-up" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 20 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/uniform-diplomacy" class="card-img-wrap">
-        <img src="../issue20_1.png" alt="Uniform Diplomacy: Nation, Luxury, and the Winter Stage" />
+        <img src="issue20_1.png" alt="Uniform Diplomacy: Nation, Luxury, and the Winter Stage" />
       </a>
       <p class="card-meta">Feb 24, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/uniform-diplomacy">Uniform Diplomacy: Nation, Luxury, and the Winter Stage</a></h3>
-      <p class="card-excerpt">The Winter Olympics have always been a contest of endurance. But now, they are also a contest of image. Before the first race begins, nations step into a stadium and announce themselves through fabric.</p>
+      <p class="card-excerpt">The Winter Olympics have always been a contest of endurance. But now, they are also a contest of image.</p>
       <a href="https://thewalkthru.blog/blog/uniform-diplomacy" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 19 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/erasing-context" class="card-img-wrap">
-        <img src="../issue19_1.png" alt="Erasing Context: Beyond the Highlight Reel" />
+        <img src="issue19_1.png" alt="Erasing Context: Beyond the Highlight Reel" />
       </a>
       <p class="card-meta">Feb 10, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/erasing-context">Erasing Context: Beyond the Highlight Reel</a></h3>
-      <p class="card-excerpt">Black athletes are most often remembered through highlights and statistics. What fades is the terrain they had to cross to arrive there — and the culture that made the clothes cool.</p>
+      <p class="card-excerpt">Black athletes are most often remembered through highlights and statistics. What fades is the terrain they had to cross.</p>
       <a href="https://thewalkthru.blog/blog/erasing-context" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 18 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/in-step" class="card-img-wrap">
-        <img src="../issue18_1.png" alt="In Step: Reliability as Style, Not Spectacle" />
+        <img src="issue18_1.png" alt="In Step: Reliability as Style, Not Spectacle" />
       </a>
       <p class="card-meta">Jan 27, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/in-step">In Step: Reliability as Style, Not Spectacle</a></h3>
-      <p class="card-excerpt">Some trends arrive loudly. Others resurface quietly, already familiar underfoot. Dad shoes belong to the latter — defined by bulk, cushioning, and unapologetic practicality.</p>
+      <p class="card-excerpt">Some trends arrive loudly. Others resurface quietly, already familiar underfoot. Dad shoes belong to the latter.</p>
       <a href="https://thewalkthru.blog/blog/in-step" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 17 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/everyday-practice" class="card-img-wrap">
-        <img src="../issue17_1.png" alt="Everyday Practice: Where Sport Becomes Habit" />
+        <img src="issue17_1.png" alt="Everyday Practice: Where Sport Becomes Habit" />
       </a>
       <p class="card-meta">Jan 13, 2026</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/everyday-practice">Everyday Practice: Where Sport Becomes Habit</a></h3>
-      <p class="card-excerpt">Athleisure in 2026 feels less like a category and more like a condition of everyday life. Clothing is no longer expected to perform for an audience — it moves through real days.</p>
+      <p class="card-excerpt">Athleisure in 2026 feels less like a category and more like a condition of everyday life.</p>
       <a href="https://thewalkthru.blog/blog/everyday-practice" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 16 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/in-stride" class="card-img-wrap">
-        <img src="../issue16_1.png" alt="In Stride: The Global Language of the Tracksuit" />
+        <img src="issue16_1.png" alt="In Stride: The Global Language of the Tracksuit" />
       </a>
       <p class="card-meta">Dec 30, 2025</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/in-stride">In Stride: The Global Language of the Tracksuit</a></h3>
-      <p class="card-excerpt">Some garments are designed for stillness, others are built to move. Created for bodies in motion, track style crossed lanes and borders, picked up meaning, and found new rhythm in music and street culture.</p>
+      <p class="card-excerpt">Created for bodies in motion, track style crossed lanes and borders, picked up meaning, and found new rhythm.</p>
       <a href="https://thewalkthru.blog/blog/in-stride" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 15 -->
+ 
     <article class="blog-card">
       <a href="https://thewalkthru.blog/blog/striped" class="card-img-wrap">
-        <img src="../issue15_1.png" alt="Striped: How Rugby Became a Cultural Uniform" />
+        <img src="issue15_1.png" alt="Striped: How Rugby Became a Cultural Uniform" />
       </a>
       <p class="card-meta">Dec 16, 2025</p>
       <h3 class="card-title"><a href="https://thewalkthru.blog/blog/striped">Striped: How Rugby Became a Cultural Uniform</a></h3>
-      <p class="card-excerpt">What we wear often starts somewhere else. From the weight of stitched cotton to the bold language of stripes, function evolves into fashion, and eventually, culture.</p>
+      <p class="card-excerpt">What we wear often starts somewhere else. From the weight of stitched cotton to the bold language of stripes.</p>
       <a href="https://thewalkthru.blog/blog/striped" class="card-link">Read More →</a>
     </article>
-
-    <!-- Issue 14 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/peak-style" class="card-img-wrap">
-        <img src="../issue14_1.png" alt="Peak Style: The New Winter Aesthetic" />
-      </a>
-      <p class="card-meta">Dec 2, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/peak-style">Peak Style: The New Winter Aesthetic</a></h3>
-      <p class="card-excerpt">Après-ski isn't just a break from the mountain; it's a culture, a mood, a season in itself. What happens off the slopes has become just as coveted as what happens on them.</p>
-      <a href="https://thewalkthru.blog/blog/peak-style" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 13 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/crowned" class="card-img-wrap">
-        <img src="../issue13_1.png" alt="Crowned: The American Story of the Fitted Hat" />
-      </a>
-      <p class="card-meta">Nov 18, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/crowned">Crowned: The American Story of the Fitted Hat</a></h3>
-      <p class="card-excerpt">Walk through the boroughs of New York, the streets of Oakland, or the neighborhoods of Houston and you'll see it immediately: fitted hat culture isn't a trend, it's a legacy.</p>
-      <a href="https://thewalkthru.blog/blog/crowned" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 12 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/tabi" class="card-img-wrap">
-        <img src="../issue12_1.png" alt="Tabi: From Workwear to Cult Classic" />
-      </a>
-      <p class="card-meta">Nov 4, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/tabi">Tabi: From Workwear to Cult Classic</a></h3>
-      <p class="card-excerpt">The split-toe Tabi has traveled a remarkable path — from 15th-century Japan to the runways of Paris. What started as utility is now irony: a hoof-shaped icon between tradition, rebellion, and art.</p>
-      <a href="https://thewalkthru.blog/blog/tabi" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 11 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/circuit-couture" class="card-img-wrap">
-        <img src="../issue11_1.png" alt="Circuit Couture: The Fast Lane of Fashion" />
-      </a>
-      <p class="card-meta">Oct 21, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/circuit-couture">Circuit Couture: The Fast Lane of Fashion</a></h3>
-      <p class="card-excerpt">There's a speed in Formula 1, one that doesn't just live on the track; it bleeds into the streets, into closets, and into culture.</p>
-      <a href="https://thewalkthru.blog/blog/circuit-couture" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 10 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/designing-flight" class="card-img-wrap">
-        <img src="../issue10_1.png" alt="Designing Flight: How Air Became Identity and Culture" />
-      </a>
-      <p class="card-meta">Oct 7, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/designing-flight">Designing Flight: How Air Became Identity and Culture</a></h3>
-      <p class="card-excerpt">Michael Jordan didn't just redefine basketball, he reframed what excellence looked like.</p>
-      <a href="https://thewalkthru.blog/blog/designing-flight" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 9 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/at-the-barre" class="card-img-wrap">
-        <img src="../issue9_1.png" alt="At the Barre: How Ballet Molded Movement into Style" />
-      </a>
-      <p class="card-meta">Sep 23, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/at-the-barre">At the Barre: How Ballet Molded Movement into Style</a></h3>
-      <p class="card-excerpt">Ballet core has re-emerged as the new symbol of chic, but its rise is part of a bigger story: how an art once built on rigor became a style language of ease and subtle rebellion.</p>
-      <a href="https://thewalkthru.blog/blog/at-the-barre" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 8 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/beyond-the-field" class="card-img-wrap">
-        <img src="../issue8_1.png" alt="Beyond the Field: How Fútbol Jerseys Translate Sport into Style" />
-      </a>
-      <p class="card-meta">Sep 9, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/beyond-the-field">Beyond the Field: How Fútbol Jerseys Translate Sport into Style</a></h3>
-      <p class="card-excerpt">Fútbol isn't just a game; it's a global language written in stripes, emblems, and threads of identity.</p>
-      <a href="https://thewalkthru.blog/blog/beyond-the-field" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 7 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/from-play-to-fabric-how-sports-patterns-and-textures-shaped-fashion" class="card-img-wrap">
-        <img src="../issue7_1.png" alt="From Play to Fabric: How Sports Patterns and Textures Shaped Fashion" />
-      </a>
-      <p class="card-meta">Aug 26, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/from-play-to-fabric-how-sports-patterns-and-textures-shaped-fashion">From Play to Fabric: How Sports Patterns Shaped Fashion</a></h3>
-      <p class="card-excerpt">Sports aren't only about games; they're full of textures, patterns, and materials that end up living far beyond the field.</p>
-      <a href="https://thewalkthru.blog/blog/from-play-to-fabric-how-sports-patterns-and-textures-shaped-fashion" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 6 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/harlem-in-motion" class="card-img-wrap">
-        <img src="../issue6_1.png" alt="Harlem in Motion: Uptown Funk" />
-      </a>
-      <p class="card-meta">Aug 12, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/harlem-in-motion">Harlem in Motion: Uptown Funk</a></h3>
-      <p class="card-excerpt">There's a rhythm in Harlem, one that's been looping for over a century, from the Harlem Renaissance to the Rucker Park sidelines, from Dapper Dan's atelier.</p>
-      <a href="https://thewalkthru.blog/blog/harlem-in-motion" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 5 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/dressed-like-they-could" class="card-img-wrap">
-        <img src="../issue5_1.png" alt="Dressed Like They Could: The Performance of Possibility" />
-      </a>
-      <p class="card-meta">Jul 29, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/dressed-like-they-could">Dressed Like They Could: The Performance of Possibility</a></h3>
-      <p class="card-excerpt">Clothing once built for motion and designed to weather storms has become something else entirely.</p>
-      <a href="https://thewalkthru.blog/blog/dressed-like-they-could" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 4 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/reins-of-change" class="card-img-wrap">
-        <img src="../issue4_1.png" alt="Reins of Change: Polo's Reckoning with Race, Class, and Culture" />
-      </a>
-      <p class="card-meta">Jul 15, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/reins-of-change">Reins of Change: Polo's Reckoning with Race, Class, and Culture</a></h3>
-      <p class="card-excerpt">How a sport of empire became a ground for equity, identity, and cultural redefinition.</p>
-      <a href="https://thewalkthru.blog/blog/reins-of-change" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 3 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/how-nba-draft-night-became-a-runway-for-legacy" class="card-img-wrap">
-        <img src="../issue3_1.png" alt="How NBA Draft Night Became a Runway for Legacy" />
-      </a>
-      <p class="card-meta">Jul 1, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/how-nba-draft-night-became-a-runway-for-legacy">How NBA Draft Night Became a Runway for Legacy</a></h3>
-      <p class="card-excerpt">The NBA Draft has always been more than a formality–it's a runway, a rite of passage, and a moment of self-definition.</p>
-      <a href="https://thewalkthru.blog/blog/how-nba-draft-night-became-a-runway-for-legacy" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 2 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/skate-the-art-of-rebellion" class="card-img-wrap">
-        <img src="../issue2_1.png" alt="Skate: The Art of Rebellion" />
-      </a>
-      <p class="card-meta">Jun 17, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/skate-the-art-of-rebellion">Skate: The Art of Rebellion</a></h3>
-      <p class="card-excerpt">From subculture to centerpiece, how skateboarding reshaped fashion, music, and design.</p>
-      <a href="https://thewalkthru.blog/blog/skate-the-art-of-rebellion" class="card-link">Read More →</a>
-    </article>
-
-    <!-- Issue 1 -->
-    <article class="blog-card">
-      <a href="https://thewalkthru.blog/blog/the-walk-that-made-the-world-watch" class="card-img-wrap">
-        <img src="../issue1_1.png" alt="Iverson, Williams, Ali: The Walk That Made the World Watch" />
-      </a>
-      <p class="card-meta">Jun 3, 2025</p>
-      <h3 class="card-title"><a href="https://thewalkthru.blog/blog/the-walk-that-made-the-world-watch">Iverson, Williams, Ali: The Walk That Made the World Watch</a></h3>
-      <p class="card-excerpt">They didn't just play. They entered. Walked in like they owned the moment, because in many ways, they did.</p>
-      <a href="https://thewalkthru.blog/blog/the-walk-that-made-the-world-watch" class="card-link">Read More →</a>
-    </article>
-    
   </div>
+</section>
 
 <!-- ══ MARQUEE ══ -->
 <section class="marquee-section" aria-hidden="true">
