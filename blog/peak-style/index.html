@@ -1,1 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peak Style: The New Winter Aesthetic — The Walk Thru</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ───────── BASE ───────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFFFFF;
+  --dark:  #340E0A;
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'Noto Serif', serif;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ───────── HEADER ───────── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 110px;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 2px; }
+
+/* ───────── MOBILE MENU ───────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 14, 10, 0.98);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-top: 110px;
+}
+
+.mobile-menu.active {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-menu-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 3rem 2.5rem;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-content a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu-content a:hover {
+  opacity: 0.65;
+}
+
+/* ───────── POST HEADER ───────── */
+.post-header {
+  padding-top: 110px;
+  padding-bottom: 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.post-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 4rem;
+}
+
+.post-date {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.25rem;
+}
+
+.post-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+/* ───────── POST CONTENT ───────── */
+.post-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.intro-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 3rem;
+}
+
+/* FEATURED IMAGE */
+.post-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1rem;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 3rem;
+}
+
+/* SECTION SUBTOPIC */
+.subtopic-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.subtopic-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+}
+
+.subtopic-body p {
+  margin-bottom: 1.5rem;
+}
+
+.subtopic-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* SECTION IMAGE */
+.section-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OUTRO SECTION */
+.outro-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 28px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.outro-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+}
+
+.outro-body p {
+  margin-bottom: 1.5rem;
+}
+
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ───────── ISSUE NAVIGATION ───────── */
+.issue-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 3rem;
+}
+
+.issue-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.issue-nav-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+}
+
+.issue-nav-arrow {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.issue-nav-link {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  transition: color 0.2s ease;
+}
+
+.issue-nav-link:hover {
+  color: var(--white);
+}
+
+.issue-nav-item:hover .issue-nav-arrow {
+  opacity: 0.6;
+}
+
+/* ───────── MARQUEE ───────── */
+.marquee-section {
+  padding: 4rem 0;
+  overflow: hidden;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin-top: 5rem;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-reverse 48s linear infinite;
+}
+
+.marquee-item {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 2.5rem;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(20px, 3vw, 36px);
+  color: rgba(255,255,255,0.35);
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ───────── FOOTER ───────── */
+
+footer {
+
+  padding: 5rem 2rem 0;
+
+  border-top: 1px solid rgba(255,255,255,0.12);
+
+}
+
+.footer-top {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+
+  gap: 3rem;
+
+}
+
+.footer-col-label {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 10px; /* was 8px — larger */
+
+  letter-spacing: 0.20em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.50); /* slightly more visible */
+
+  margin-bottom: 1.25rem;
+
+}
+
+/* Brand col */
+
+.footer-brand-name {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 16px; /* was 13px */
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  color: var(--white);
+
+  margin-bottom: 0.6rem;
+
+}
+
+.footer-brand-tag {
+
+  font-family: 'Noto Serif', serif;
+
+  font-style: italic;
+
+  font-size: 15px; /* was 13px */
+
+  color: rgba(255,255,255,0.55);
+
+  margin-bottom: 1.75rem;
+
+}
+
+/* Social icons */
+
+.social-row {
+
+  display: flex;
+
+  gap: 0.75rem;
+
+}
+
+.social-link {
+
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.22);
+
+  color: rgba(255,255,255,0.60);
+
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  flex-shrink: 0;
+
+}
+
+.social-link:hover {
+
+  color: var(--white);
+
+  border-color: var(--white);
+
+}
+
+.social-link svg {
+
+  width: 15px;
+
+  height: 15px;
+
+  fill: currentColor;
+
+}
+
+/* Nav col */
+
+.footer-nav-list {
+
+  list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.9rem;
+
+}
+
+.footer-nav-list a {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 12px; /* was 9px — larger */
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(255,255,255,0.60);
+
+  transition: color 0.2s ease;
+
+}
+
+.footer-nav-list a:hover { color: var(--white); }
+
+/* Newsletter col */
+
+.signup-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+}
+
+.signup-input {
+
+  background: transparent;
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: var(--white);
+
+  font-family: 'Noto Serif', serif;
+
+  font-size: 15px; /* was 14px */
+
+  padding: 0.8rem 1rem;
+
+  outline: none;
+
+  width: 100%;
+
+  transition: border-color 0.2s ease;
+
+  -webkit-appearance: none;
+
+  appearance: none;
+
+}
+
+.signup-input::placeholder {
+
+  color: rgba(255,255,255,0.35);
+
+}
+
+.signup-input:focus {
+
+  border-color: var(--white);
+
+}
+
+.signup-btn {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 10px; /* was 9px */
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  background: var(--white);
+
+  color: var(--dark);
+
+  border: none;
+
+  padding: 0.9rem 1.5rem;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  transition: opacity 0.2s ease;
+
+}
+
+.signup-btn:hover { opacity: 0.85; }
+
+.signup-note {
+
+  font-family: 'Noto Serif', serif;
+
+  font-style: italic;
+
+  font-size: 12px; /* was 11px */
+
+  color: rgba(255,255,255,0.35);
+
+}
+
+/* Bottom bar */
+
+.footer-bottom {
+
+  margin-top: 4rem;
+
+  border-top: 1px solid rgba(255,255,255,0.10);
+
+}
+
+.footer-bottom-inner {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 1.5rem 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.footer-bottom-inner p {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 9px; /* was 8px */
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.30);
+
+}
+
+/* ───────── RESPONSIVE ───────── */
+
+@media (max-width: 768px) {
+
+  .nav-logo img { height: 70px; }
+
+  nav { height: 90px; padding: 0 1.25rem; }
+
+  .hero { padding-top: 90px; }
+
+  .hero-heading {
+
+    font-size: clamp(28px, 5vw, 44px);
+
+    line-height: 1.1;
+
+  }
+
+  .hero-subheading {
+
+    display: none;
+
+  }
+
+  /* Show hamburger menu on mobile */
+
+  .hamburger {
+
+    display: flex;
+
+  }
+
+  /* Hide desktop nav links on mobile */
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+  .footer-top {
+
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+  }
+
+  .footer-bottom-inner {
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    text-align: center;
+
+  }
+
+  .hero-inner { padding: 3rem 1.25rem 0; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <nav>
+    <a class="nav-logo" href="https://thewalkthru.blog">
+      <img src="../logo.png" alt="The Walk Thru" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thewalkthru.blog/blog" class="active">Blog</a></li>
+      <li><a href="https://thewalkthru.blog/archive">Archive</a></li>
+      <li><a href="https://thewalkthru.blog/about">About</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <a href="https://thewalkthru.blog/blog">Blog</a>
+    <a href="https://thewalkthru.blog/archive">Archive</a>
+    <a href="https://thewalkthru.blog/about">About</a>
+  </div>
+</div>
+
+<!-- ══ POST HEADER ══ -->
+<section class="post-header">
+  <div class="post-header-inner">
+    <p class="post-date">Tuesday, Dec 2, 2025</p>
+    <h1 class="post-title">Peak Style: The New Winter Aesthetic</h1>
+  </div>
+</section>
+
+<!-- ══ POST CONTENT ══ -->
+<section class="post-section">
+  
+  <!-- INTRO -->
+  <p class="intro-body">
+There’s a certain kind of warmth you only find in winter—not the heat of the sun, but the glow of a fire-lit lodge, the sound of boots on snow, and the confidence that comes from dressing for the cold with intention. Après-ski isn’t just a break from the mountain; it’s a culture, a mood, a season in itself. What happens off the slopes has become just as coveted as what happens on them. From cable-knit sweaters and technical puffers to glossy boots and designer goggles, winter gear has evolved into a fashion language that conveys comfort, heritage, and understated luxury.
+  </p>
+
+  <!-- HEADER IMAGE -->
+  <div class="post-image">
+    <img src="issue14_1.png" alt="Peak" />
+  </div>
+  <p class="image-caption">Emilio Pucci Ski 2023, Photo via Emilio Pucci.</p>
+
+  <!-- SECTION 1 -->
+  <h2 class="subtopic-title">The Evolution of Alpine Style</h2>
+  <div class="subtopic-body">
+    <p>Skiing has always carried an air of performance; choreography of precision, speed, and elegance, but the style around the sport evolved long before après-ski became an Instagram trope. In the early 20th century, women skied in ankle-length skirts and heavy wool layers, until European designers like Lucien Lelong and Madeleine Vionnet introduced tailored ski wear in the 1920s and ’30s. The invention of the goose-down jacket in 1936 made pieces warmer, lighter, and more functional, while resorts like Sun Valley in the U.S. quietly established mountain style as a marker of leisure and privilege.</p>
+    <p>By the 1940s and ’50s, après-ski—the French term for “after ski”—signaled the transition from slopes to lodge. Designers like Emilio Pucci elevated the aesthetic with colorful, body-skimming suits, and stretch ski pants brought aspirational glamour to technical gear. By the 1960s and ’70s, Alpine style exploded in color; space-age goggles, lurex knits, and the debut of the Moon Boot. Bolder silhouettes, fleece layers, and bright nylon puffers became common as brands like Sorel and Canada Goose blurred the line between mountain gear and streetwear.</p>
+    <p>The ’80s and ’90s introduced Gore-Tex, neon snowsuits, and looser snowboard-inspired silhouettes, while the 2000s and 2010s brought metallic puffers, reflective goggles, pastel palettes, and faux-fur trims. Luxury houses like Chanel, Fendi, and Perfect Moment turned ski capsules into seasonal status symbols, and social media amplified the allure. Today, après-ski exists beyond the mountain; it’s a global winter aesthetic, a mix of heritage, performance, and curated leisure. The remix of ’70s technicolour, ’90s neon, and modern technical gear into an ever-evolving style language continues to evolve.</p>
+  </div>
+  <div class="post-image">
+    <img src="issue14_2.png" alt="Emillio" />
+  </div>
+  <p class="image-caption">Marquis Emilio Pucci fastens a ski for Mrs Poppi de Salis, Zermatt, 1947. Photo via Harper’s Bazaar.</p>
+  
+  <!-- SECTION 2 -->
+  <h2 class="subtopic-title">The Lodge as Runway</h2>
+  <div class="subtopic-body">
+    <p>Après-ski thrives in the shared spaces; chalets, bars, fire pits, and outdoor terraces where skiers peel off layers and transition from performance to leisure. The lodge becomes a runway of its own. Think cozy textures: shearling vests, ribbed turtlenecks, quilted bombers, mirrored goggles worn like accessories, and gloves clipped to jackets with intentional insouciance.</p>
+    <p>Brands like Moncler, Bogner, Kith, and Canada Goose have perfected the blend of technical performance and elevated aesthetics. Their pieces work on the slopes but speak loudly in the lodge: warmth as status, fabric as storytelling. Even small details have become style signals. Here, winter is not an inconvenience. It’s a canvas.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue14_3.png" alt="Zermatt" />
+  </div>
+  <p class="image-caption">Cultivating après-ski at The Omnia, Zermatt. Photo via The Omnia.</p>
+
+  <!-- SECTION 3 -->
+  <h2 class="subtopic-title">When Brands Go Snowbound</h2>
+  <div class="subtopic-body">
+    <p>Fashion’s fascination with the slopes has only intensified as winter capsules evolve into statements of identity, not just seasonality. Collaborations now serve as cultural snapshots; designers translating their world into cold-weather form.</p>
+    <p>In recent years, we’ve seen houses reinterpret alpine gear through their own lenses. Coach’s 2021 winter drop blended New York nostalgia with snow-dusted Americana, proving that a leather-forward brand could create pieces built for frost and visibility. On the opposite end of the spectrum, LoveShackFancy and Bogner’s collaboration offered a softer fantasy: floral prints and pastel palettes wrapped around high-performance ski silhouettes, merging romance with technical precision.</p>
+    <p>These collaborations highlight a larger shift; winter wear is no longer limited to utility brands. It’s become an arena where designers experiment, storytell, and bridge cultures. Each drop transforms the slopes into a mood board, showing that cold-weather fashion can be rugged, dreamy, retro, or futuristic, depending on who’s creating it.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue14_4.png" alt="Bogner" />
+  </div>
+  <p class="image-caption">LoveShackFancy x Bogner FIRE + ICE collaboration, 2023. Photo via LoveShackFancy.</p>
+
+  <!-- SECTION 4 -->
+  <h2 class="subtopic-title">Moon Boots: The Icon of Icy Terrain</h2>
+  <div class="subtopic-body">
+    <p>If there’s one silhouette that has defined the modern après-ski wardrobe, it’s the Moon Boot. Launched in the early 1970s and inspired by the boots worn by astronauts, Moon Boots blend nostalgia with futurism. Their bulbous shape, foam-wrapped cushioning, and high-shine nylon exterior turn practicality into pop culture. They’re warm, and more importantly, they’re unmistakable.</p>
+    <p>Over the last decade, Moon Boots have seen a resurgence driven by street style, styled celebrities, and a new wave of colorways and limited-edition drops. Collaborations with brands like Chloé, MSGM, and Moncler have turned the snow boot into a winter trophy piece. Gen Z has embraced them with a playful energy: oversized silhouettes, metallic finishes, and tonal monochrome fits that feel both camp and couture. In the world of après-ski, the Moon Boot is more than footwear; it’s a personality. A symbol of fun, comfort, and a little bit of irreverence.</p>
+     <img src="issue14_5.png" alt="Moon" />
+  </div>
+  <p class="image-caption">Moon Boots x Moncler Grenoble. Photo via Moncler.</p>
+
+  <!-- SECTION 5 -->
+  <h2 class="subtopic-title">The Pop-Culture Rise of the Moon Boot</h2>
+  <div class="subtopic-body">
+    <p>Moon Boots didn’t just return; they became a pop-culture staple. Their oversized, space-age silhouette hit at the perfect intersection of nostalgia and internet aesthetics, and celebrities helped turn the boot from a quirky winter piece into a full cultural moment.</p>
+    <p>Across music, film, and fashion, Moon Boots have been embraced especially by POC tastemakers who redefine what winter style can look like. Rihanna, for example, has been spotted in multiple pairs over the years, styling them with oversized puffer coats and fur-trimmed accessories. Moon Boots are now constantly surging across Pinterest boards and TikTok edits, reinforcing their status as a winter fashion staple.</p>
+    <p>In the influencer and street-style space, creators have woven Moon Boots into airport fits, ski trips, and editorial shoots. These celebrity moments matter, proving that the boots aren't just fashion statements; they're functional pieces embraced by those who move culture forward. A once-niche European snow boot has been rewritten through the lens of global pop culture, with POC creatives shaping its modern identity. Through music videos, street style, and curated winter photo dumps, they’ve made Moon Boots feel young, expressive, and culturally expansive.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue14_6.png" alt="Rihanna" />
+  </div>
+  <p class="image-caption">Rihanna in blue Moon Boots. Photo via Vogue.</p>
+
+<!-- SECTION 6 -->
+  <h2 class="subtopic-title">The Shift: Technical Precision Meets Alpine Elegance</h2>
+  <div class="subtopic-body">
+    <p>In the last few years, streetwear’s influence has carved out a space in après-ski style. Puffer silhouettes turned exaggerated; snow pants styled with hoodies; metallic goggles paired with oversized scarves; and outerwear that blends utilitarian grit with slope-ready design.</p>
+    <p>Luxury houses have embraced the shift, bringing couture sensibilities to winter performance. Jil Sander’s recent ski collection with Moncler offers a minimal, sculptural take with architectural lines, technical quilting, and a clean palette, proving alpine gear can feel almost couture.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue14_7.png" alt="Jil" />
+  </div>
+  <p class="image-caption">Moncler + Jil Sander, 2025. Photo via Moncler.</p>
+  </div>
+  <div class="subtopic-body2">
+    <p>Streetwear and luxury collaborations now push the conversation even further. Nike x Jacquemus’ FW25 collection marries Jacquemus’ signature minimal elegance with high-performance techwear, balancing tailored sophistication with slope-ready functionality. Designed for skiers, snowboarders, or slope-side spectators, the 18-piece range emphasizes versatility without compromising performance. Highlights include sleek triple-layer GORE-TEX jackets and pants, plus a standout multi-functional jacket combining a water- and windproof shell with an interior bomber for dual-layered warmth</p>
+    <p>By merging Nike’s engineering with Jacquemus’ refined design ethos, the collection proves alpine-ready gear can be as stylish off the slopes as it is functional on them. The cross-pollination works both ways. Pieces originally engineered for the mountain have migrated into everyday wardrobes. Function became fashion, and winter emerged as one of streetwear’s most expressive seasons.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue14_8.png" alt="Jacquemues" />
+  </div>
+  <p class="image-caption">Jacquemus x Nike’ FW25. Photo via Nike. </p>
+  
+  <!-- OUTRO -->
+  <h2 class="outro-title">The Walk Forward</h2>
+  <div class="outro-body">
+    <p>Ski style has evolved from a niche alpine pastime into a global fashion ecosystem, blending heritage, high performance, nostalgia, and contemporary luxury. Moon Boots, metallic goggles, shearling layers, and technical puffers represent more than a trend; they capture a winter mindset that values comfort, expression, and a bit of cold-weather drama.</p>
+    <p>As the season unfolds, winter wardrobes continue to reflect the balance between warmth and style, play and polish. From slopes to streets, the spirit proves that the cold isn’t something to escape; it’s something to dress for, celebrate, and make iconic.</p>
+    <p>Winter is not just a temperature. It’s a look, a feeling, a culture, and its story is just getting warmed up.</p>
+  </div>
+
+</section>
+
+<!-- ══ ISSUE NAVIGATION ══ -->
+<section class="post-section">
+    <div class="issue-nav-item">
+      <span class="issue-nav-label">Back to</span>
+      <a href="https://thewalkthru.blog/blog" class="issue-nav-link">All Issues</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<section class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+
+    <!-- Brand col -->
+    <div>
+      <p class="footer-col-label">The Walk Thru</p>
+      <p class="footer-brand-name">The Walk Thru</p>
+      <p class="footer-brand-tag">Where fashion strides forward;</p>
+
+      <div class="social-row">
+        <!-- Instagram -->
+        <a class="social-link" href="https://instagram.com/walkthru.blog" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-link" href="https://www.linkedin.com/company/avantsocialclub/posts/?feedView=all" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a class="social-link" href="https://www.tiktok.com/@walkthru.blog" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.16 8.16 0 004.77 1.52V7.1a4.85 4.85 0 01-1-.41z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav col — contact removed -->
+    <div>
+      <ul class="footer-nav-list">
+        <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
+        <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
+        <li><a href="https://www.thewalkthru.blog/about">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter col -->
+    <div>
+      <p class="footer-col-label">Walk With Us</p>
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://blog.us10.list-manage.com/subscribe/post?u=da625566671eacc97823e2b8e&amp;id=51a62accf7&amp;f_id=00924be4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <input type="email" name="EMAIL" class="signup-input required email" id="mce-EMAIL" placeholder="Email address" required="" aria-label="Email address" />
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_da625566671eacc97823e2b8e_51a62accf7" tabindex="-1" value="">
+              </div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="signup-btn" value="Sign Up">
+                  <p class="signup-note">We value and respect your privacy.</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© 2026 The Walk Thru. All rights reserved.</p>
+      <p>thewalkthru.blog@gmail.com</p>
+    </div>
+  </div>
+
+</footer>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+</html>
 
