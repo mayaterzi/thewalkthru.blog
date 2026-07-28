@@ -1,1 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Flip Flop: An Unexpected Summer Staple — The Walk Thru</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ───────── BASE ───────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFFFFF;
+  --dark:  #340E0A;
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'Noto Serif', serif;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ───────── HEADER ───────── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 110px;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 2px; }
+
+/* ───────── MOBILE MENU ───────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 14, 10, 0.98);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-top: 110px;
+}
+
+.mobile-menu.active {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-menu-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 3rem 2.5rem;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-content a {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu-content a:hover {
+  opacity: 0.65;
+}
+
+/* ───────── POST HEADER ───────── */
+.post-header {
+  padding-top: 110px;
+  padding-bottom: 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.post-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 4rem;
+}
+
+.post-date {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.25rem;
+}
+
+.post-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+/* ───────── POST CONTENT ───────── */
+.post-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.intro-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 3rem;
+}
+
+/* FEATURED IMAGE */
+.post-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1rem;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 3rem;
+}
+
+/* SECTION SUBTOPIC */
+.subtopic-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.subtopic-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+}
+
+.subtopic-body p {
+  margin-bottom: 1.5rem;
+}
+
+.subtopic-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* SECTION IMAGE */
+.section-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OUTRO SECTION */
+.outro-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 28px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.outro-body {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+}
+
+.outro-body p {
+  margin-bottom: 1.5rem;
+}
+
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+.outro-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ───────── ISSUE NAVIGATION ───────── */
+.issue-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 3rem;
+}
+
+.issue-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.issue-nav-label {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+}
+
+.issue-nav-arrow {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.issue-nav-link {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+  transition: color 0.2s ease;
+}
+
+.issue-nav-link:hover {
+  color: var(--white);
+}
+
+.issue-nav-item:hover .issue-nav-arrow {
+  opacity: 0.6;
+}
+
+/* ───────── MARQUEE ───────── */
+.marquee-section {
+  padding: 4rem 0;
+  overflow: hidden;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin-top: 5rem;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-reverse 48s linear infinite;
+}
+
+.marquee-item {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 2.5rem;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(20px, 3vw, 36px);
+  color: rgba(255,255,255,0.35);
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ───────── FOOTER ───────── */
+
+footer {
+
+  padding: 5rem 2rem 0;
+
+  border-top: 1px solid rgba(255,255,255,0.12);
+
+}
+
+.footer-top {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+
+  gap: 3rem;
+
+}
+
+.footer-col-label {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 10px; /* was 8px — larger */
+
+  letter-spacing: 0.20em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.50); /* slightly more visible */
+
+  margin-bottom: 1.25rem;
+
+}
+
+/* Brand col */
+
+.footer-brand-name {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 16px; /* was 13px */
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  color: var(--white);
+
+  margin-bottom: 0.6rem;
+
+}
+
+.footer-brand-tag {
+
+  font-family: 'Noto Serif', serif;
+
+  font-style: italic;
+
+  font-size: 15px; /* was 13px */
+
+  color: rgba(255,255,255,0.55);
+
+  margin-bottom: 1.75rem;
+
+}
+
+/* Social icons */
+
+.social-row {
+
+  display: flex;
+
+  gap: 0.75rem;
+
+}
+
+.social-link {
+
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.22);
+
+  color: rgba(255,255,255,0.60);
+
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  flex-shrink: 0;
+
+}
+
+.social-link:hover {
+
+  color: var(--white);
+
+  border-color: var(--white);
+
+}
+
+.social-link svg {
+
+  width: 15px;
+
+  height: 15px;
+
+  fill: currentColor;
+
+}
+
+/* Nav col */
+
+.footer-nav-list {
+
+  list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.9rem;
+
+}
+
+.footer-nav-list a {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 12px; /* was 9px — larger */
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(255,255,255,0.60);
+
+  transition: color 0.2s ease;
+
+}
+
+.footer-nav-list a:hover { color: var(--white); }
+
+/* Newsletter col */
+
+.signup-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+}
+
+.signup-input {
+
+  background: transparent;
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: var(--white);
+
+  font-family: 'Noto Serif', serif;
+
+  font-size: 15px; /* was 14px */
+
+  padding: 0.8rem 1rem;
+
+  outline: none;
+
+  width: 100%;
+
+  transition: border-color 0.2s ease;
+
+  -webkit-appearance: none;
+
+  appearance: none;
+
+}
+
+.signup-input::placeholder {
+
+  color: rgba(255,255,255,0.35);
+
+}
+
+.signup-input:focus {
+
+  border-color: var(--white);
+
+}
+
+.signup-btn {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 10px; /* was 9px */
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  background: var(--white);
+
+  color: var(--dark);
+
+  border: none;
+
+  padding: 0.9rem 1.5rem;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  transition: opacity 0.2s ease;
+
+}
+
+.signup-btn:hover { opacity: 0.85; }
+
+.signup-note {
+
+  font-family: 'Noto Serif', serif;
+
+  font-style: italic;
+
+  font-size: 12px; /* was 11px */
+
+  color: rgba(255,255,255,0.35);
+
+}
+
+/* Bottom bar */
+
+.footer-bottom {
+
+  margin-top: 4rem;
+
+  border-top: 1px solid rgba(255,255,255,0.10);
+
+}
+
+.footer-bottom-inner {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 1.5rem 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.footer-bottom-inner p {
+
+  font-family: 'Unbounded', sans-serif;
+
+  font-size: 9px; /* was 8px */
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.30);
+
+}
+
+/* ───────── RESPONSIVE ───────── */
+
+@media (max-width: 768px) {
+
+  .nav-logo img { height: 70px; }
+
+  nav { height: 90px; padding: 0 1.25rem; }
+
+  .hero { padding-top: 90px; }
+
+  .hero-heading {
+
+    font-size: clamp(28px, 5vw, 44px);
+
+    line-height: 1.1;
+
+  }
+
+  .hero-subheading {
+
+    display: none;
+
+  }
+
+  /* Show hamburger menu on mobile */
+
+  .hamburger {
+
+    display: flex;
+
+  }
+
+  /* Hide desktop nav links on mobile */
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+  .footer-top {
+
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+  }
+
+  .footer-bottom-inner {
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    text-align: center;
+
+  }
+
+  .hero-inner { padding: 3rem 1.25rem 0; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <nav>
+    <a class="nav-logo" href="https://thewalkthru.blog">
+      <img src="../logo.png" alt="The Walk Thru" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thewalkthru.blog/blog" class="active">Blog</a></li>
+      <li><a href="https://thewalkthru.blog/archive">Archive</a></li>
+      <li><a href="https://thewalkthru.blog/about">About</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <a href="https://thewalkthru.blog/blog">Blog</a>
+    <a href="https://thewalkthru.blog/archive">Archive</a>
+    <a href="https://thewalkthru.blog/about">About</a>
+  </div>
+</div>
+
+<!-- ══ POST HEADER ══ -->
+<section class="post-header">
+  <div class="post-header-inner">
+    <p class="post-date">Tuesday, Jul 28, 2026</p>
+    <h1 class="post-title">The Flip Flop: An Unexpected Summer Staple</h1>
+  </div>
+</section>
+
+<!-- ══ POST CONTENT ══ -->
+<section class="post-section">
+  
+  <!-- INTRO -->
+  <p class="intro-body">
+Flip flops are often dismissed as the simplest form of footwear. A rubber sole, a thin strap, a sound that follows every step. They are associated with vacations, beaches, and moments outside of strict routine. The flip flop exists between comfort and expression; it belongs equally to the shoreline and the street, the everyday, and the ironically intentional. What began as practical footwear adapted for Brazil’s beaches became a global symbol of leisure, simplicity, and effortless style.
+  </p>
+
+  <!-- HEADER IMAGE -->
+  <div class="post-image">
+    <img src="issue31_1.png" alt="H" />
+  </div>
+  <p class="image-caption">Flip Flops. Photo via Havaianas.</p>
+
+  <!-- SECTION 1 -->
+  <h2 class="subtopic-title">The Origins of Simplicity</h2>
+  <div class="subtopic-body">
+    <p>The history of the flip flop spans thousands of years. Ancient civilizations across Egypt, Greece, Rome, and Asia developed forms of open sandals designed around climate, movement, and accessibility.</p>
+    <p>The earliest versions prioritized protection from heat and terrain rather than simple visual identity. The flip flop’s greatest strength was never complexity; it was its ability to adapt.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue31_2.png" alt="Tut" />
+  </div>
+  <p class="image-caption">New Kingdom sandals. Photo via the Metropolitan Museum of Art.</p>
+
+  <!-- SECTION 2 -->
+  <h2 class="subtopic-title">Brazil’s Translation</h2>
+  <div class="subtopic-body">
+    <p>In 1962, Brazil transformed this simple sandal into a cultural icon with the creation of Havaianas. Inspired by traditional Japanese zōri sandals, Havaianas introduced a rubber version designed for Brazilian consumers. The name itself references ideas of sunshine, travel, and coastal living.</p>
+    <p>Originally marketed as an affordable everyday sandal, Havaianas became deeply connected to Brazilian identity. They appeared everywhere: on beaches, in neighborhoods, and throughout daily life. Their simplicity reflected a Brazilian approach to style rooted in comfort, movement, and confidence rather than formality.</p>
+    <p>However, the sandal was not designed to impress. It became iconic because it represented a way of living, and now lives as a global phenomenon.</p>
+  </div>
+  <div class="section-image">
+     <img src="issue31_3.png" alt="Brazil" />
+  </div>
+  <p class="image-caption">Havaianas flip flops, Brazil. Photo via Havaianas.</p>
+
+  <!-- SECTION 3 -->
+  <h2 class="subtopic-title">From Beachwear to Culture</h2>
+  <div class="subtopic-body">
+    <p>For decades, flip flops existed in a space separate from fashion. They represented downtime, something worn after work, after sport, and while escaping routine. Their association with leisure made them feel almost anti-fashion.</p>
+    <p>But culture began shifting, and every summer the flip flop makes its way back into the rotation. As streetwear blurred the boundaries between luxury and everyday clothing, comfort became a central part of contemporary style. Sneakers moved from athletic performance into luxury collections, sweatpants became wardrobe essentials, and casual footwear gained new meaning, the flip flop followed the same path.</p>
+    <p>Streetwear brands like Patta took their own spin on classic models. And what was once considered too relaxed became a statement of confidence.  </p>
+  </div>
+  <div class="section-image">
+     <img src="issue31_4.png" alt="Patta" />
+  </div>
+  <p class="image-caption">Patta x Havaianas. Photo via Patta.</p>
+
+  <!-- SECTION 4 -->
+  <h2 class="subtopic-title">Luxury’s Embrace</h2>
+  <div class="subtopic-body">
+    <p>Luxury fashion has always been drawn to ordinary objects. The most influential designs often begin with utility before becoming symbols of taste. Sneakers, work jackets, and baseball caps all followed this trajectory. The flip flop was simply next.</p>
+    <p>As fashion shifted toward understated luxury and quiet confidence, designers stopped treating the sandal as beachwear and began presenting it as a complete styling piece. Houses like Chanel, The Row, Miu Miu, and Toteme introduced elevated interpretations through leather construction, refined proportions, and minimalist design. Rather than reinventing the silhouette, they refined it.</p>
+  </div>
+   <div class="section-image">
+     <img src="issue31_5.png" alt="Chanel" />
+  </div>
+  <p class="image-caption">Chanel Lambskin Flip Flops. Photo via Pinterest.</p>
+
+  <!-- OUTRO -->
+  <h2 class="outro-title">The Walk Forward</h2>
+  <div class="outro-body">
+    <p>The flip flop has traveled far beyond its simple construction. From ancient sandals to Brazilian beaches, from Havaianas to luxury runways, it has quietly evolved alongside changing ideas of comfort, identity, and style.</p>
+    <p>Its influence comes from what it refuses to be. It doesn't rely on innovation, performance, or excess. Instead, it represents something increasingly valuable in contemporary fashion: ease.</p>
+    <p>The most enduring pieces are rarely the most complicated; they become icons because they fit naturally into everyday life while continuously adapting to the culture around them.</p>
+  </div>
+
+</section>
+
+<!-- ══ ISSUE NAVIGATION ══ -->
+<section class="post-section">
+    <div class="issue-nav-item">
+      <span class="issue-nav-label">Back to</span>
+      <a href="https://thewalkthru.blog/blog" class="issue-nav-link">All Issues</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<section class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">AUTHENTIC</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">CURATED</span>
+    <span class="marquee-sep">•</span>
+    <span class="marquee-item">BOLD</span>
+    <span class="marquee-sep">•</span>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+
+    <!-- Brand col -->
+    <div>
+      <p class="footer-col-label">The Walk Thru</p>
+      <p class="footer-brand-name">The Walk Thru</p>
+      <p class="footer-brand-tag">Where fashion strides forward;</p>
+
+      <div class="social-row">
+        <!-- Instagram -->
+        <a class="social-link" href="https://instagram.com/walkthru.blog" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-link" href="https://www.linkedin.com/company/avantsocialclub/posts/?feedView=all" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a class="social-link" href="https://www.tiktok.com/@walkthru.blog" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.16 8.16 0 004.77 1.52V7.1a4.85 4.85 0 01-1-.41z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav col — contact removed -->
+    <div>
+      <ul class="footer-nav-list">
+        <li><a href="https://www.thewalkthru.blog/blog">Blog</a></li>
+        <li><a href="https://www.thewalkthru.blog/archive">Archive</a></li>
+        <li><a href="https://www.thewalkthru.blog/about">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter col -->
+    <div>
+      <p class="footer-col-label">Walk With Us</p>
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://blog.us10.list-manage.com/subscribe/post?u=da625566671eacc97823e2b8e&amp;id=51a62accf7&amp;f_id=00924be4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <input type="email" name="EMAIL" class="signup-input required email" id="mce-EMAIL" placeholder="Email address" required="" aria-label="Email address" />
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_da625566671eacc97823e2b8e_51a62accf7" tabindex="-1" value="">
+              </div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="signup-btn" value="Sign Up">
+                  <p class="signup-note">We value and respect your privacy.</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>© 2026 The Walk Thru. All rights reserved.</p>
+      <p>thewalkthru.blog@gmail.com</p>
+    </div>
+  </div>
+
+</footer>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+</html>
